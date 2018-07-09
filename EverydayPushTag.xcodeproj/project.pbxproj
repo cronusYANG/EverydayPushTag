@@ -14,6 +14,8 @@
 		A437F52620F38DAB002975B6 /* EverydayPushTagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F52520F38DAB002975B6 /* EverydayPushTagTests.m */; };
 		A437F53120F38DAB002975B6 /* EverydayPushTagUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53020F38DAB002975B6 /* EverydayPushTagUITests.m */; };
 		A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53F20F38EEB002975B6 /* SBHomeController.m */; };
+		A437F54420F391D5002975B6 /* SBTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F54320F391D5002975B6 /* SBTagView.m */; };
+		BFAD25C43755AA5AEC501A56 /* libPods-EverydayPushTag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC07B4D9B1BF7BC39BFE652 /* libPods-EverydayPushTag.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1331632E6E5849BDF5955E30 /* Pods-EverydayPushTag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayPushTag.release.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayPushTag/Pods-EverydayPushTag.release.xcconfig"; sourceTree = "<group>"; };
 		A437F50920F38DAA002975B6 /* EverydayPushTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayPushTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A437F50C20F38DAA002975B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A437F50D20F38DAA002975B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +52,10 @@
 		A437F53220F38DAB002975B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A437F53E20F38EEB002975B6 /* SBHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBHomeController.h; sourceTree = "<group>"; };
 		A437F53F20F38EEB002975B6 /* SBHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBHomeController.m; sourceTree = "<group>"; };
+		A437F54220F391D5002975B6 /* SBTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTagView.h; sourceTree = "<group>"; };
+		A437F54320F391D5002975B6 /* SBTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTagView.m; sourceTree = "<group>"; };
+		A637411ECAE0AB28FE50B6F4 /* Pods-EverydayPushTag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayPushTag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayPushTag/Pods-EverydayPushTag.debug.xcconfig"; sourceTree = "<group>"; };
+		CDC07B4D9B1BF7BC39BFE652 /* libPods-EverydayPushTag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EverydayPushTag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAD25C43755AA5AEC501A56 /* libPods-EverydayPushTag.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62DD6CB6185E7AD0AC16CF08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A637411ECAE0AB28FE50B6F4 /* Pods-EverydayPushTag.debug.xcconfig */,
+				1331632E6E5849BDF5955E30 /* Pods-EverydayPushTag.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A0AFA91687798795F6011462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDC07B4D9B1BF7BC39BFE652 /* libPods-EverydayPushTag.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A437F50020F38DAA002975B6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				A437F52420F38DAB002975B6 /* EverydayPushTagTests */,
 				A437F52F20F38DAB002975B6 /* EverydayPushTagUITests */,
 				A437F50A20F38DAA002975B6 /* Products */,
+				62DD6CB6185E7AD0AC16CF08 /* Pods */,
+				A0AFA91687798795F6011462 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +126,7 @@
 		A437F50B20F38DAA002975B6 /* EverydayPushTag */ = {
 			isa = PBXGroup;
 			children = (
+				A437F54120F391B9002975B6 /* View */,
 				A437F50C20F38DAA002975B6 /* AppDelegate.h */,
 				A437F50D20F38DAA002975B6 /* AppDelegate.m */,
 				A437F53E20F38EEB002975B6 /* SBHomeController.h */,
@@ -129,6 +157,15 @@
 			path = EverydayPushTagUITests;
 			sourceTree = "<group>";
 		};
+		A437F54120F391B9002975B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A437F54220F391D5002975B6 /* SBTagView.h */,
+				A437F54320F391D5002975B6 /* SBTagView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A437F53520F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTag" */;
 			buildPhases = (
+				9152129351FEBBE6DED710A9 /* [CP] Check Pods Manifest.lock */,
 				A437F50520F38DAA002975B6 /* Sources */,
 				A437F50620F38DAA002975B6 /* Frameworks */,
 				A437F50720F38DAA002975B6 /* Resources */,
@@ -254,6 +292,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9152129351FEBBE6DED710A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverydayPushTag-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A437F50520F38DAA002975B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +320,7 @@
 			files = (
 				A437F51C20F38DAB002975B6 /* main.m in Sources */,
 				A437F50E20F38DAA002975B6 /* AppDelegate.m in Sources */,
+				A437F54420F391D5002975B6 /* SBTagView.m in Sources */,
 				A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +480,7 @@
 		};
 		A437F53620F38DAB002975B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A637411ECAE0AB28FE50B6F4 /* Pods-EverydayPushTag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -437,6 +498,7 @@
 		};
 		A437F53720F38DAB002975B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1331632E6E5849BDF5955E30 /* Pods-EverydayPushTag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
