@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A437F50E20F38DAA002975B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F50D20F38DAA002975B6 /* AppDelegate.m */; };
+		A437F51620F38DAB002975B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A437F51520F38DAB002975B6 /* Assets.xcassets */; };
+		A437F51920F38DAB002975B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A437F51720F38DAB002975B6 /* LaunchScreen.storyboard */; };
+		A437F51C20F38DAB002975B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F51B20F38DAB002975B6 /* main.m */; };
+		A437F52620F38DAB002975B6 /* EverydayPushTagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F52520F38DAB002975B6 /* EverydayPushTagTests.m */; };
+		A437F53120F38DAB002975B6 /* EverydayPushTagUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53020F38DAB002975B6 /* EverydayPushTagUITests.m */; };
+		A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53F20F38EEB002975B6 /* SBHomeController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A437F52220F38DAB002975B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A437F50120F38DAA002975B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A437F50820F38DAA002975B6;
+			remoteInfo = EverydayPushTag;
+		};
+		A437F52D20F38DAB002975B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A437F50120F38DAA002975B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A437F50820F38DAA002975B6;
+			remoteInfo = EverydayPushTag;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A437F50920F38DAA002975B6 /* EverydayPushTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayPushTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A437F50C20F38DAA002975B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A437F50D20F38DAA002975B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A437F51520F38DAB002975B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A437F51820F38DAB002975B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A437F51A20F38DAB002975B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A437F51B20F38DAB002975B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A437F52120F38DAB002975B6 /* EverydayPushTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayPushTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A437F52520F38DAB002975B6 /* EverydayPushTagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverydayPushTagTests.m; sourceTree = "<group>"; };
+		A437F52720F38DAB002975B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A437F52C20F38DAB002975B6 /* EverydayPushTagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayPushTagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A437F53020F38DAB002975B6 /* EverydayPushTagUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverydayPushTagUITests.m; sourceTree = "<group>"; };
+		A437F53220F38DAB002975B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A437F53E20F38EEB002975B6 /* SBHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBHomeController.h; sourceTree = "<group>"; };
+		A437F53F20F38EEB002975B6 /* SBHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBHomeController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A437F50620F38DAA002975B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A437F51E20F38DAB002975B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A437F52920F38DAB002975B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A437F50020F38DAA002975B6 = {
+			isa = PBXGroup;
+			children = (
+				A437F50B20F38DAA002975B6 /* EverydayPushTag */,
+				A437F52420F38DAB002975B6 /* EverydayPushTagTests */,
+				A437F52F20F38DAB002975B6 /* EverydayPushTagUITests */,
+				A437F50A20F38DAA002975B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A437F50A20F38DAA002975B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A437F50920F38DAA002975B6 /* EverydayPushTag.app */,
+				A437F52120F38DAB002975B6 /* EverydayPushTagTests.xctest */,
+				A437F52C20F38DAB002975B6 /* EverydayPushTagUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A437F50B20F38DAA002975B6 /* EverydayPushTag */ = {
+			isa = PBXGroup;
+			children = (
+				A437F50C20F38DAA002975B6 /* AppDelegate.h */,
+				A437F50D20F38DAA002975B6 /* AppDelegate.m */,
+				A437F53E20F38EEB002975B6 /* SBHomeController.h */,
+				A437F53F20F38EEB002975B6 /* SBHomeController.m */,
+				A437F51520F38DAB002975B6 /* Assets.xcassets */,
+				A437F51720F38DAB002975B6 /* LaunchScreen.storyboard */,
+				A437F51A20F38DAB002975B6 /* Info.plist */,
+				A437F51B20F38DAB002975B6 /* main.m */,
+			);
+			path = EverydayPushTag;
+			sourceTree = "<group>";
+		};
+		A437F52420F38DAB002975B6 /* EverydayPushTagTests */ = {
+			isa = PBXGroup;
+			children = (
+				A437F52520F38DAB002975B6 /* EverydayPushTagTests.m */,
+				A437F52720F38DAB002975B6 /* Info.plist */,
+			);
+			path = EverydayPushTagTests;
+			sourceTree = "<group>";
+		};
+		A437F52F20F38DAB002975B6 /* EverydayPushTagUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A437F53020F38DAB002975B6 /* EverydayPushTagUITests.m */,
+				A437F53220F38DAB002975B6 /* Info.plist */,
+			);
+			path = EverydayPushTagUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A437F50820F38DAA002975B6 /* EverydayPushTag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A437F53520F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTag" */;
+			buildPhases = (
+				A437F50520F38DAA002975B6 /* Sources */,
+				A437F50620F38DAA002975B6 /* Frameworks */,
+				A437F50720F38DAA002975B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverydayPushTag;
+			productName = EverydayPushTag;
+			productReference = A437F50920F38DAA002975B6 /* EverydayPushTag.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A437F52020F38DAB002975B6 /* EverydayPushTagTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A437F53820F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTagTests" */;
+			buildPhases = (
+				A437F51D20F38DAB002975B6 /* Sources */,
+				A437F51E20F38DAB002975B6 /* Frameworks */,
+				A437F51F20F38DAB002975B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A437F52320F38DAB002975B6 /* PBXTargetDependency */,
+			);
+			name = EverydayPushTagTests;
+			productName = EverydayPushTagTests;
+			productReference = A437F52120F38DAB002975B6 /* EverydayPushTagTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A437F52B20F38DAB002975B6 /* EverydayPushTagUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A437F53B20F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTagUITests" */;
+			buildPhases = (
+				A437F52820F38DAB002975B6 /* Sources */,
+				A437F52920F38DAB002975B6 /* Frameworks */,
+				A437F52A20F38DAB002975B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A437F52E20F38DAB002975B6 /* PBXTargetDependency */,
+			);
+			name = EverydayPushTagUITests;
+			productName = EverydayPushTagUITests;
+			productReference = A437F52C20F38DAB002975B6 /* EverydayPushTagUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A437F50120F38DAA002975B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SB;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = POPLAR;
+				TargetAttributes = {
+					A437F50820F38DAA002975B6 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					A437F52020F38DAB002975B6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = A437F50820F38DAA002975B6;
+					};
+					A437F52B20F38DAB002975B6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = A437F50820F38DAA002975B6;
+					};
+				};
+			};
+			buildConfigurationList = A437F50420F38DAA002975B6 /* Build configuration list for PBXProject "EverydayPushTag" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A437F50020F38DAA002975B6;
+			productRefGroup = A437F50A20F38DAA002975B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A437F50820F38DAA002975B6 /* EverydayPushTag */,
+				A437F52020F38DAB002975B6 /* EverydayPushTagTests */,
+				A437F52B20F38DAB002975B6 /* EverydayPushTagUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A437F50720F38DAA002975B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A437F51920F38DAB002975B6 /* LaunchScreen.storyboard in Resources */,
+				A437F51620F38DAB002975B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A437F51F20F38DAB002975B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A437F52A20F38DAB002975B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A437F50520F38DAA002975B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A437F51C20F38DAB002975B6 /* main.m in Sources */,
+				A437F50E20F38DAA002975B6 /* AppDelegate.m in Sources */,
+				A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A437F51D20F38DAB002975B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A437F52620F38DAB002975B6 /* EverydayPushTagTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A437F52820F38DAB002975B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A437F53120F38DAB002975B6 /* EverydayPushTagUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A437F52320F38DAB002975B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A437F50820F38DAA002975B6 /* EverydayPushTag */;
+			targetProxy = A437F52220F38DAB002975B6 /* PBXContainerItemProxy */;
+		};
+		A437F52E20F38DAB002975B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A437F50820F38DAA002975B6 /* EverydayPushTag */;
+			targetProxy = A437F52D20F38DAB002975B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A437F51720F38DAB002975B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A437F51820F38DAB002975B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A437F53320F38DAB002975B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A437F53420F38DAB002975B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A437F53620F38DAB002975B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EverydayPushTag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.poplar.EverydayPushTag;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A437F53720F38DAB002975B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EverydayPushTag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.poplar.EverydayPushTag;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A437F53920F38DAB002975B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EverydayPushTagTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.poplar.EverydayPushTagTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverydayPushTag.app/EverydayPushTag";
+			};
+			name = Debug;
+		};
+		A437F53A20F38DAB002975B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EverydayPushTagTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.poplar.EverydayPushTagTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverydayPushTag.app/EverydayPushTag";
+			};
+			name = Release;
+		};
+		A437F53C20F38DAB002975B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EverydayPushTagUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.poplar.EverydayPushTagUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EverydayPushTag;
+			};
+			name = Debug;
+		};
+		A437F53D20F38DAB002975B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EverydayPushTagUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.poplar.EverydayPushTagUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EverydayPushTag;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A437F50420F38DAA002975B6 /* Build configuration list for PBXProject "EverydayPushTag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A437F53320F38DAB002975B6 /* Debug */,
+				A437F53420F38DAB002975B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A437F53520F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A437F53620F38DAB002975B6 /* Debug */,
+				A437F53720F38DAB002975B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A437F53820F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTagTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A437F53920F38DAB002975B6 /* Debug */,
+				A437F53A20F38DAB002975B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A437F53B20F38DAB002975B6 /* Build configuration list for PBXNativeTarget "EverydayPushTagUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A437F53C20F38DAB002975B6 /* Debug */,
+				A437F53D20F38DAB002975B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A437F50120F38DAA002975B6 /* Project object */;
+}
