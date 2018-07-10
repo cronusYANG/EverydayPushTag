@@ -7,18 +7,29 @@
 //
 
 #import "SBRecordController.h"
+#import "SBDataManager.h"
 
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic) UITableView *tableView;
+@property(strong,nonatomic) NSArray *dataArray;
 @end
 
 @implementation SBRecordController
+
+-(NSArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSArray array];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupUI];
+    
+    [self loadData];
 }
 
 -(void)setupUI{
@@ -32,14 +43,20 @@ static NSString *cellID = @"cell";
     
 }
 
+-(void)loadData{
+    id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+    if (data) {
+        self.dataArray = data;
+    }
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return _dataArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    
-    
+    cell.textLabel.text = _dataArray[indexPath.row];
     return cell;
 }
 

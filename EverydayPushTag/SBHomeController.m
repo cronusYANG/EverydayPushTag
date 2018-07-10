@@ -10,6 +10,8 @@
 #import "SBTimeView.h"
 #import <Masonry.h>
 #import "SBTagView.h"
+#import "SBTimeManager.h"
+#import "SBDataManager.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
@@ -72,8 +74,14 @@
 
 -(void)clickTag{
     
+    NSString *time = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"HH:mm:ss"];
+    NSString *date = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"yyyy年MM月dd日"];
+    NSString *record = [NSString stringWithFormat:@"%@-%@",date,time];
     
+    NSMutableArray *arr = [NSMutableArray array];
+    [arr addObject:record];
     
+    [SBDataManager saveData:arr withFileName:@"TIMEDATA"];
 }
 
 - (void)didReceiveMemoryWarning {
