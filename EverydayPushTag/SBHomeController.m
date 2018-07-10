@@ -9,6 +9,7 @@
 #import "SBHomeController.h"
 #import "SBTimeView.h"
 #import <Masonry.h>
+#import "SBTagView.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;

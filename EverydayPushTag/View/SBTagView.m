@@ -9,6 +9,8 @@
 #import "SBTagView.h"
 #import <Masonry.h>
 
+#define BTN_W 150
+
 @implementation SBTagView
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -22,12 +24,13 @@
     _tagBtn = [[UIButton alloc] init];
     [_tagBtn setImage:[UIImage imageNamed:@"tag"] forState:UIControlStateNormal];
     _tagBtn.layer.borderWidth = 2;
-    _tagBtn.layer.cornerRadius = 3;
+    _tagBtn.layer.cornerRadius = BTN_W/2;
     _tagBtn.layer.masksToBounds = YES;
     [self addSubview:_tagBtn];
     
     [_tagBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.center.equalTo(self);
+        make.height.with.offset(BTN_W);
     }];
 }
 
