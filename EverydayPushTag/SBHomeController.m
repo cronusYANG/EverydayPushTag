@@ -12,28 +12,59 @@
 #import "SBTagView.h"
 #import "SBTimeManager.h"
 #import "SBDataManager.h"
+#import "SBRecordController.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
 @property(strong,nonatomic) SBTagView *tagView;
 @property (strong,nonatomic) NSTimer *timer;
+@property(assign,nonatomic) BOOL ispush;
+@property(strong,nonatomic) NSMutableArray *mArray;
 @end
 
 @implementation SBHomeController
 
+//-(NSMutableArray *)mArray{
+//    if (!_mArray) {
+//        _mArray = [NSMutableArray array];
+//    }
+//    return _mArray;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _mArray = [NSMutableArray array];
     [self setupUI];
     [self createTimer:0.5];
+    
+    UIPanGestureRecognizer *removeSelfView = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(removeSelfView:)];
+    [self.view addGestureRecognizer:removeSelfView];
+}
+
+- (void)removeSelfView:(UIPanGestureRecognizer *)gesture
+{
+    
+    if (!_ispush) {
+        _ispush = YES;
+        SBRecordController *vc = [[SBRecordController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+//    [self.view removeFromSuperview];
 }
 
 - (void)dealloc {
     [self.timer invalidate];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _ispush = NO;
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
     [self.timer invalidate];
 }
 
@@ -78,10 +109,10 @@
     NSString *date = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"yyyy年MM月dd日"];
     NSString *record = [NSString stringWithFormat:@"%@-%@",date,time];
     
-    NSMutableArray *arr = [NSMutableArray array];
-    [arr addObject:record];
+//    NSMutableArray *arr = [NSMutableArray array];
+    [_mArray addObject:record];
     
-    [SBDataManager saveData:arr withFileName:@"TIMEDATA"];
+    [SBDataManager saveData:_mArray withFileName:@"TIMEDATA"];
 }
 
 - (void)didReceiveMemoryWarning {

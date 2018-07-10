@@ -8,6 +8,7 @@
 
 #import "SBRecordController.h"
 #import "SBDataManager.h"
+#import <Masonry.h>
 
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource>
@@ -33,14 +34,17 @@ static NSString *cellID = @"cell";
 }
 
 -(void)setupUI{
-    
+    self.view.backgroundColor = [UIColor yellowColor];
     _tableView = [[UITableView alloc] init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableView];
     
-    
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(64);
+        make.left.right.bottom.offset(0);
+    }];
 }
 
 -(void)loadData{
