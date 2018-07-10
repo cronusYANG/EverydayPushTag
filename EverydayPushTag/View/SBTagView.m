@@ -7,15 +7,28 @@
 //
 
 #import "SBTagView.h"
+#import <Masonry.h>
 
 @implementation SBTagView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(instancetype)initWithFrame:(CGRect)frame{
+    if ([super initWithFrame:frame]) {
+        [self setupUI];
+    }
+    return self;
 }
-*/
+
+-(void)setupUI{
+    _tagBtn = [[UIButton alloc] init];
+    [_tagBtn setImage:[UIImage imageNamed:@"tag"] forState:UIControlStateNormal];
+    _tagBtn.layer.borderWidth = 2;
+    _tagBtn.layer.cornerRadius = 3;
+    _tagBtn.layer.masksToBounds = YES;
+    [self addSubview:_tagBtn];
+    
+    [_tagBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+    }];
+}
 
 @end

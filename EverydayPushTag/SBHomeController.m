@@ -7,16 +7,63 @@
 //
 
 #import "SBHomeController.h"
+#import "SBTimeView.h"
+#import <Masonry.h>
 
 @interface SBHomeController ()
-
+@property(strong,nonatomic) SBTimeView *timeView;
+@property (strong,nonatomic) NSTimer *timer;
 @end
 
 @implementation SBHomeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setupUI];
+    [self createTimer:0.5];
+}
+
+- (void)dealloc {
+    [self.timer invalidate];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
+}
+
+//创建定时器
+- (void)createTimer:(NSTimeInterval)animationDuration {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:animationDuration target:self selector:@selector(timing) userInfo:nil repeats:YES];
+    self.timer.fireDate = [NSDate distantPast];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+//- (void)startTimerWithDelay:(NSTimeInterval)delay
+//{
+//    if (self.timer) {
+//        if ([self.timer isValid]) {
+//            self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:delay];
+//        }
+//    }
+//}
+
+-(void)timing{
+    [self.timeView updateTime];
+}
+
+-(void)setupUI{
+    self.view.backgroundColor = [UIColor grayColor];
+    
+    _timeView = [[SBTimeView alloc] init];
+    [self.view addSubview:_timeView];
+    
+    [_timeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(110);
+        make.centerX.equalTo(self.view);
+        make.left.right.offset(0);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

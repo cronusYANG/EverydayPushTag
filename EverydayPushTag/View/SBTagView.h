@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SBTagView : UIView
-
+@property(strong,nonatomic) UIButton *tagBtn;
 @end
