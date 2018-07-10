@@ -24,7 +24,7 @@
 }
 
 -(void)setupUI{
-
+    
     _timeLabel = [[UILabel alloc] init];
     _timeLabel.text = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"HH:mm:ss"];
     _timeLabel.font = [UIFont systemFontOfSize:80];

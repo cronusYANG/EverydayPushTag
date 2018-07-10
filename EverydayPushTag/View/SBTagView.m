@@ -9,7 +9,7 @@
 #import "SBTagView.h"
 #import <Masonry.h>
 
-#define BTN_W 150
+#define BTN_W 160
 
 @implementation SBTagView
 
@@ -30,7 +30,7 @@
     
     [_tagBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.height.with.offset(BTN_W);
+        make.height.width.offset(BTN_W);
     }];
 }
 

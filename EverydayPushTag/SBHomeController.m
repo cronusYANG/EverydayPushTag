@@ -13,6 +13,7 @@
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
+@property(strong,nonatomic) SBTagView *tagView;
 @property (strong,nonatomic) NSTimer *timer;
 @end
 
@@ -41,21 +42,12 @@
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
-//- (void)startTimerWithDelay:(NSTimeInterval)delay
-//{
-//    if (self.timer) {
-//        if ([self.timer isValid]) {
-//            self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:delay];
-//        }
-//    }
-//}
-
 -(void)timing{
     [self.timeView updateTime];
 }
 
 -(void)setupUI{
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor yellowColor];
     
     _timeView = [[SBTimeView alloc] init];
     [self.view addSubview:_timeView];
@@ -65,6 +57,23 @@
         make.centerX.equalTo(self.view);
         make.left.right.offset(0);
     }];
+    
+    _tagView = [[SBTagView alloc] init];
+    [self.view addSubview:_tagView];
+    
+    [_tagView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.width.height.offset(300);
+    }];
+    
+    [_tagView.tagBtn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+-(void)clickTag{
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
