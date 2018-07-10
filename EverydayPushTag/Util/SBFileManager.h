@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SBFileManager : NSObject
-
++ (NSString *)creatDocumentFile:(NSString *)fileName;
++ (NSString *)documentDirectoryFilePath:(NSString*)fileName;
++ (BOOL)removeItem:(NSString *)itemPath;
 @end
