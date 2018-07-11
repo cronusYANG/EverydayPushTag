@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SBTimeManager : NSObject
-- (NSString *)dateToStringWithDateFormat:(NSString *)format;
-- (NSString*)weekdayStringFromDate;
++ (NSDate *)nowTime;
++ (NSString *)dateToStringWithDateFormat:(NSString *)format;
++ (NSString*)weekdayStringFromDate;
++ (BOOL)isSameDay:(NSDate*)date;
 @end

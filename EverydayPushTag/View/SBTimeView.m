@@ -26,7 +26,7 @@
 -(void)setupUI{
     
     _timeLabel = [[UILabel alloc] init];
-    _timeLabel.text = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"HH:mm:ss"];
+    _timeLabel.text = [SBTimeManager dateToStringWithDateFormat:@"HH:mm:ss"];
     _timeLabel.font = [UIFont systemFontOfSize:80];
     _timeLabel.tintColor = [UIColor blackColor];
     _timeLabel.textAlignment = NSTextAlignmentCenter;
@@ -39,8 +39,8 @@
     }];
     
     _dateLabel = [[UILabel alloc] init];
-    NSString *date = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"yyyy年MM月dd日"];
-    NSString *week = [[[SBTimeManager alloc] init] weekdayStringFromDate];
+    NSString *date = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
+    NSString *week = [SBTimeManager weekdayStringFromDate];
     _dateLabel.text = [NSString stringWithFormat:@"%@ %@",date,week];
     _dateLabel.font = [UIFont systemFontOfSize:14];
     _dateLabel.tintColor = [UIColor blackColor];
@@ -55,7 +55,7 @@
 }
 
 -(void)updateTime{
-    _timeLabel.text = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"HH:mm:ss"];
+    _timeLabel.text = [SBTimeManager dateToStringWithDateFormat:@"HH:mm:ss"];
 }
 
 //-(void)setTime:(NSString *)time{

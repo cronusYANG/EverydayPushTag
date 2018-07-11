@@ -9,6 +9,7 @@
 #import "SBRecordController.h"
 #import "SBDataManager.h"
 #import <Masonry.h>
+#import "SBModel.h"
 
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource>
@@ -34,12 +35,14 @@ static NSString *cellID = @"cell";
 }
 
 -(void)setupUI{
+    self.title = @"Record";
     self.view.backgroundColor = [UIColor yellowColor];
     _tableView = [[UITableView alloc] init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableView];
+    _tableView.tableFooterView = [UIView new];
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(64);
@@ -60,7 +63,9 @@ static NSString *cellID = @"cell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    cell.textLabel.text = _dataArray[indexPath.row];
+    SBModel *mode = [[SBModel alloc] init];
+    mode = _dataArray[indexPath.row];
+    cell.textLabel.text = mode.record;
     return cell;
 }
 

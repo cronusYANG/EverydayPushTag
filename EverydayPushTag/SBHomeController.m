@@ -13,6 +13,7 @@
 #import "SBTimeManager.h"
 #import "SBDataManager.h"
 #import "SBRecordController.h"
+#import "SBModel.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     _mArray = [NSMutableArray array];
     [self setupUI];
-    [self createTimer:0.5];
+    
     
     UIPanGestureRecognizer *removeSelfView = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(removeSelfView:)];
     [self.view addGestureRecognizer:removeSelfView];
@@ -60,6 +61,7 @@
     [super viewWillAppear:animated];
     _ispush = NO;
     [self.navigationController setNavigationBarHidden:YES];
+    [self createTimer:0.5];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -104,15 +106,66 @@
 }
 
 -(void)clickTag{
+    id saveTime = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+    NSMutableArray *arr = [NSMutableArray array];
+    arr = saveTime;
+    SBModel *model = [[SBModel alloc] init];
+    BOOL isSameDay = false;
+    for (int i = 0; i < arr.count; i++) {
+        model = arr[i];
+        if ([SBTimeManager isSameDay:model.date]) {
+            isSameDay = true;
+        }
+    }
+    if (!isSameDay) {
+        [self recordCover:NO];
+    }else{
+        
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"提示" message:@"今天已经有一天打卡记录,是否覆盖?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self recordCover:YES];
+        }];
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [actionSheet addAction:action1];
+        [actionSheet addAction:action2];
+        [self presentViewController:actionSheet animated:YES completion:nil];
+    }
+
+}
+
+-(void)recordCover:(BOOL)cover{
+    if (cover) {
+        id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+        if (data) {
+            _mArray = data;
+            SBModel *model = [[SBModel alloc] init];
+            for (int i = 0; i < _mArray.count; i++) {
+                model = _mArray[i];
+                if ([SBTimeManager isSameDay:model.date]) {
+                    [_mArray removeObjectAtIndex:i];
+                }
+            }
+        }
+    }
     
-    NSString *time = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"HH:mm:ss"];
-    NSString *date = [[[SBTimeManager alloc] init] dateToStringWithDateFormat:@"yyyy年MM月dd日"];
+
+    NSString *time = [SBTimeManager dateToStringWithDateFormat:@"HH:mm:ss"];
+    NSString *date = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
     NSString *record = [NSString stringWithFormat:@"%@-%@",date,time];
-    
-//    NSMutableArray *arr = [NSMutableArray array];
-    [_mArray addObject:record];
-    
+    SBModel *model = [[SBModel alloc] init];
+    model.record = record;
+    model.date = [SBTimeManager nowTime];
+    [_mArray addObject:model];
     [SBDataManager saveData:_mArray withFileName:@"TIMEDATA"];
+
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"记录成功" message:time preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [actionSheet addAction:action1];
+    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,14 +173,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

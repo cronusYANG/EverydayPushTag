@@ -15,6 +15,7 @@
 		A437F53120F38DAB002975B6 /* EverydayPushTagUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53020F38DAB002975B6 /* EverydayPushTagUITests.m */; };
 		A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53F20F38EEB002975B6 /* SBHomeController.m */; };
 		A437F54420F391D5002975B6 /* SBTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F54320F391D5002975B6 /* SBTagView.m */; };
+		A4BB888220F65C68005B70B0 /* SBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888120F65C68005B70B0 /* SBModel.m */; };
 		A4D2E47B20F4EC1A001F5ADE /* SBRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E47A20F4EC1A001F5ADE /* SBRecordController.m */; };
 		A4D2E47E20F4EC6E001F5ADE /* SBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E47D20F4EC6E001F5ADE /* SBFileManager.m */; };
 		A4D2E48E20F4FCC0001F5ADE /* SBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E48D20F4FCC0001F5ADE /* SBDataManager.m */; };
@@ -59,6 +60,8 @@
 		A437F53F20F38EEB002975B6 /* SBHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBHomeController.m; sourceTree = "<group>"; };
 		A437F54220F391D5002975B6 /* SBTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTagView.h; sourceTree = "<group>"; };
 		A437F54320F391D5002975B6 /* SBTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTagView.m; sourceTree = "<group>"; };
+		A4BB888020F65C68005B70B0 /* SBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBModel.h; sourceTree = "<group>"; };
+		A4BB888120F65C68005B70B0 /* SBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBModel.m; sourceTree = "<group>"; };
 		A4D2E47920F4EC1A001F5ADE /* SBRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBRecordController.h; sourceTree = "<group>"; };
 		A4D2E47A20F4EC1A001F5ADE /* SBRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBRecordController.m; sourceTree = "<group>"; };
 		A4D2E47C20F4EC6E001F5ADE /* SBFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBFileManager.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				A437F53F20F38EEB002975B6 /* SBHomeController.m */,
 				A4D2E47920F4EC1A001F5ADE /* SBRecordController.h */,
 				A4D2E47A20F4EC1A001F5ADE /* SBRecordController.m */,
+				A4BB888020F65C68005B70B0 /* SBModel.h */,
+				A4BB888120F65C68005B70B0 /* SBModel.m */,
 				A437F51520F38DAB002975B6 /* Assets.xcassets */,
 				A437F51720F38DAB002975B6 /* LaunchScreen.storyboard */,
 				A437F51A20F38DAB002975B6 /* Info.plist */,
@@ -357,6 +362,7 @@
 				A437F50E20F38DAA002975B6 /* AppDelegate.m in Sources */,
 				A4D2E47E20F4EC6E001F5ADE /* SBFileManager.m in Sources */,
 				A4E9EA0820F4B0AD00C27FE5 /* SBTimeView.m in Sources */,
+				A4BB888220F65C68005B70B0 /* SBModel.m in Sources */,
 				A437F54420F391D5002975B6 /* SBTagView.m in Sources */,
 				A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */,
 				A4E9EA0C20F4B14A00C27FE5 /* SBTimeManager.m in Sources */,
