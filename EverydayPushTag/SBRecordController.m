@@ -66,6 +66,7 @@ static NSString *cellID = @"cell";
     SBModel *mode = [[SBModel alloc] init];
     mode = _dataArray[indexPath.row];
     cell.textLabel.text = mode.record;
+    cell.imageView.image = [UIImage imageNamed:@"devil"];
     return cell;
 }
 

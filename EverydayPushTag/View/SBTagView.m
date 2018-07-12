@@ -22,15 +22,15 @@
 
 -(void)setupUI{
     _tagBtn = [[UIButton alloc] init];
-    [_tagBtn setImage:[UIImage imageNamed:@"tag"] forState:UIControlStateNormal];
-    _tagBtn.layer.borderWidth = 2;
-    _tagBtn.layer.cornerRadius = BTN_W/2;
-    _tagBtn.layer.masksToBounds = YES;
+//    [_tagBtn setImage:[UIImage imageNamed:@"tag"] forState:UIControlStateNormal];
+//    _tagBtn.layer.borderWidth = 2;
+//    _tagBtn.layer.cornerRadius = BTN_W/2;
+//    _tagBtn.layer.masksToBounds = YES;
     [self addSubview:_tagBtn];
     
     [_tagBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
-        make.height.width.offset(BTN_W);
+//        make.center.equalTo(self);
+        make.top.bottom.left.right.offset(0);
     }];
 }
 

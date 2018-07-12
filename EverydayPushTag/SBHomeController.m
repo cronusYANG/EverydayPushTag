@@ -15,12 +15,16 @@
 #import "SBRecordController.h"
 #import "SBModel.h"
 
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
 @property(strong,nonatomic) SBTagView *tagView;
 @property (strong,nonatomic) NSTimer *timer;
 @property(assign,nonatomic) BOOL ispush;
 @property(strong,nonatomic) NSMutableArray *mArray;
+
+@property(strong,nonatomic) UILabel *centerLabel;
 @end
 
 @implementation SBHomeController
@@ -36,12 +40,13 @@
     _mArray = [NSMutableArray array];
     [self setupUI];
     
-    
-    UIPanGestureRecognizer *removeSelfView = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(removeSelfView:)];
-    [self.view addGestureRecognizer:removeSelfView];
 }
 
-- (void)removeSelfView:(UIPanGestureRecognizer *)gesture
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self removeSelfView];
+}
+
+- (void)removeSelfView
 {
     
     if (!_ispush) {
@@ -49,8 +54,7 @@
         SBRecordController *vc = [[SBRecordController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
-//    [self.view removeFromSuperview];
+
 }
 
 - (void)dealloc {
@@ -67,7 +71,12 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    
     [self.timer invalidate];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
 }
 
 //创建定时器
@@ -82,7 +91,14 @@
 }
 
 -(void)setupUI{
-    self.view.backgroundColor = [UIColor yellowColor];
+//    self.view.backgroundColor = [UIColor yellowColor];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile"]];
+    [self.view addSubview:imgView];
+    
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.offset(0);
+    }];
     
     _timeView = [[SBTimeView alloc] init];
     [self.view addSubview:_timeView];
@@ -98,11 +114,43 @@
     
     [_tagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
-        make.width.height.offset(300);
+        make.width.offset(WIDTH);
+        make.height.offset(HEIGHT/2);
     }];
     
     [_tagView.tagBtn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
     
+    _centerLabel = [[UILabel alloc] init];
+    _centerLabel.text = @"轻  触  中  心  区  域  记  录";
+    _centerLabel.textColor = [UIColor blackColor];
+    _centerLabel.font = [UIFont systemFontOfSize:19];
+    [_centerLabel sizeToFit];
+    [self.view addSubview:_centerLabel];
+    
+    [_centerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view).offset(20);;
+    }];
+    
+    [self labelAnimate];
+}
+
+-(void)labelAnimate{
+    
+    
+        [UIView animateWithDuration:2 animations:^{
+            self.centerLabel.alpha = 0;
+        }completion:^(BOOL finished) {
+            [UIView animateWithDuration:1 animations:^{
+                self.centerLabel.alpha = 1;
+            } completion:^(BOOL finished) {
+                [self labelAnimate];
+            }];
+        }];
+    
+    
+    
+    NSLog(@"=====递归");
 }
 
 -(void)clickTag{
@@ -120,8 +168,8 @@
     if (!isSameDay) {
         [self recordCover:NO];
     }else{
-        
-        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"提示" message:@"今天已经有一天打卡记录,是否覆盖?" preferredStyle:UIAlertControllerStyleAlert];
+        NSString *mes = [NSString stringWithFormat:@"今天已经记录一次,时间为:%@,是否覆盖?",model.record];
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"提示" message:mes preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self recordCover:YES];
         }];
