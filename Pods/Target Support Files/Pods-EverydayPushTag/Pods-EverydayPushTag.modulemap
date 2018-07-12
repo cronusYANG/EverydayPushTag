@@ -1,0 +1,6 @@
+module Pods_EverydayPushTag {
+  umbrella header "Pods-EverydayPushTag-umbrella.h"
+
+  export *
+  module * { export * }
+}

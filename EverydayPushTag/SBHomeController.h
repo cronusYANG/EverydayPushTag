@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STLVideoViewController.h"
 
-@interface SBHomeController : UIViewController
+@interface SBHomeController : STLVideoViewController
 
 @end

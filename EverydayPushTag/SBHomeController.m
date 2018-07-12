@@ -93,12 +93,12 @@
 -(void)setupUI{
 //    self.view.backgroundColor = [UIColor yellowColor];
     
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile"]];
-    [self.view addSubview:imgView];
-    
-    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.left.right.offset(0);
-    }];
+//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile"]];
+//    [self.view addSubview:imgView];
+//    
+//    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.bottom.left.right.offset(0);
+//    }];
     
     _timeView = [[SBTimeView alloc] init];
     [self.view addSubview:_timeView];
