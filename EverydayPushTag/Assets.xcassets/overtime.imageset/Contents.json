@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tag.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "overtime@2x.png",
       "scale" : "2x"
     },
     {

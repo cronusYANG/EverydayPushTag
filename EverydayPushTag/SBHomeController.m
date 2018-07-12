@@ -201,10 +201,11 @@
 
     NSString *time = [SBTimeManager dateToStringWithDateFormat:@"HH:mm:ss"];
     NSString *date = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
-    NSString *record = [NSString stringWithFormat:@"%@-%@",date,time];
+    NSString *record = [NSString stringWithFormat:@"%@-%@-%@",date,[SBTimeManager weekdayStringFromDate],time];
     SBModel *model = [[SBModel alloc] init];
     model.record = record;
     model.date = [SBTimeManager nowTime];
+    model.week = [SBTimeManager weekdayStringFromDate];
     [_mArray addObject:model];
     [SBDataManager saveData:_mArray withFileName:@"TIMEDATA"];
 

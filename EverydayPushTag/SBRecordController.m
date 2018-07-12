@@ -36,7 +36,7 @@ static NSString *cellID = @"cell";
 
 -(void)setupUI{
     self.title = @"Record";
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     _tableView = [[UITableView alloc] init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -66,7 +66,21 @@ static NSString *cellID = @"cell";
     SBModel *mode = [[SBModel alloc] init];
     mode = _dataArray[indexPath.row];
     cell.textLabel.text = mode.record;
-    cell.imageView.image = [UIImage imageNamed:@"devil"];
+    NSString *imageName;
+    if ([mode.week isEqualToString:@"星期一"]) {
+        imageName = @"Monday";
+    }else if ([mode.week isEqualToString:@"星期二"]){
+        imageName = @"Tuesday";
+    }else if ([mode.week isEqualToString:@"星期三"]){
+        imageName = @"Wednesday";
+    }else if ([mode.week isEqualToString:@"星期四"]){
+        imageName = @"Thursday";
+    }else if ([mode.week isEqualToString:@"星期五"]){
+        imageName = @"Friday";
+    }else{
+        imageName = @"overtime";
+    }
+    cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
 }
 
