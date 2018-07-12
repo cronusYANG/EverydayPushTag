@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SBTimeView : UIView
-//@property(strong,nonatomic) NSString *time;
+@property(strong,nonatomic) UIButton *signIn;
 -(void)updateTime;
 @end

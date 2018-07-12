@@ -52,6 +52,14 @@
         make.top.equalTo(self.timeLabel.mas_bottom).offset(4);
         make.centerX.equalTo(self.timeLabel);
     }];
+    
+    _signIn = [[UIButton alloc] init];
+    [_signIn setBackgroundColor:[UIColor clearColor]];
+    [self addSubview:_signIn];
+    
+    [_signIn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.right.left.offset(0);
+    }];
 }
 
 -(void)updateTime{

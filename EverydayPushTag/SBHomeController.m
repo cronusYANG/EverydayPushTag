@@ -107,32 +107,35 @@
         make.top.offset(110);
         make.centerX.equalTo(self.view);
         make.left.right.offset(0);
+        make.height.offset(115);
     }];
     
-    _tagView = [[SBTagView alloc] init];
-    [self.view addSubview:_tagView];
+    [_timeView.signIn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
     
-    [_tagView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.width.offset(WIDTH);
-        make.height.offset(HEIGHT/2);
-    }];
+//    _tagView = [[SBTagView alloc] init];
+//    [self.view addSubview:_tagView];
+//
+//    [_tagView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.view);
+//        make.width.offset(WIDTH);
+//        make.height.offset(HEIGHT/2);
+//    }];
     
-    [_tagView.tagBtn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
+//    [_tagView.tagBtn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
     
-    _centerLabel = [[UILabel alloc] init];
-    _centerLabel.text = @"轻  触  中  心  区  域  记  录";
-    _centerLabel.textColor = [UIColor blackColor];
-    _centerLabel.font = [UIFont systemFontOfSize:19];
-    [_centerLabel sizeToFit];
-    [self.view addSubview:_centerLabel];
+//    _centerLabel = [[UILabel alloc] init];
+//    _centerLabel.text = @"轻  触  中  心  区  域  记  录";
+//    _centerLabel.textColor = [UIColor blackColor];
+//    _centerLabel.font = [UIFont systemFontOfSize:19];
+//    [_centerLabel sizeToFit];
+//    [self.view addSubview:_centerLabel];
+//
+//    [_centerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self.view);
+//        make.centerY.equalTo(self.view).offset(20);;
+//    }];
     
-    [_centerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(20);;
-    }];
-    
-    [self labelAnimate];
+//    [self labelAnimate];
 }
 
 -(void)labelAnimate{
