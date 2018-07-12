@@ -95,7 +95,7 @@
     
 //    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile"]];
 //    [self.view addSubview:imgView];
-//    
+//
 //    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.top.bottom.left.right.offset(0);
 //    }];
@@ -213,6 +213,10 @@
     [SBDataManager saveData:_mArray withFileName:@"TIMEDATA"];
 
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"记录成功" message:time preferredStyle:UIAlertControllerStyleAlert];
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);//震动提示
+    //提示音
+    SystemSoundID soundIDTest = 1013;
+    AudioServicesPlaySystemSound(soundIDTest);
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
     }];
