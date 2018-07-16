@@ -89,6 +89,7 @@ static NSString *cellID = @"cell";
         imageName = @"overtime";
     }
     cell.imageView.image = [UIImage imageNamed:imageName];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
