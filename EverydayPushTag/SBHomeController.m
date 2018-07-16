@@ -23,8 +23,6 @@
 @property (strong,nonatomic) NSTimer *timer;
 @property(assign,nonatomic) BOOL ispush;
 @property(strong,nonatomic) NSMutableArray *mArray;
-
-@property(strong,nonatomic) UILabel *centerLabel;
 @end
 
 @implementation SBHomeController
@@ -112,48 +110,6 @@
     
     [_timeView.signIn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
     
-//    _tagView = [[SBTagView alloc] init];
-//    [self.view addSubview:_tagView];
-//
-//    [_tagView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.view);
-//        make.width.offset(WIDTH);
-//        make.height.offset(HEIGHT/2);
-//    }];
-    
-//    [_tagView.tagBtn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
-    
-//    _centerLabel = [[UILabel alloc] init];
-//    _centerLabel.text = @"轻  触  中  心  区  域  记  录";
-//    _centerLabel.textColor = [UIColor blackColor];
-//    _centerLabel.font = [UIFont systemFontOfSize:19];
-//    [_centerLabel sizeToFit];
-//    [self.view addSubview:_centerLabel];
-//
-//    [_centerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(self.view);
-//        make.centerY.equalTo(self.view).offset(20);;
-//    }];
-    
-//    [self labelAnimate];
-}
-
--(void)labelAnimate{
-    
-    
-        [UIView animateWithDuration:2 animations:^{
-            self.centerLabel.alpha = 0;
-        }completion:^(BOOL finished) {
-            [UIView animateWithDuration:1 animations:^{
-                self.centerLabel.alpha = 1;
-            } completion:^(BOOL finished) {
-                [self labelAnimate];
-            }];
-        }];
-    
-    
-    
-    NSLog(@"=====递归");
 }
 
 -(void)clickTag{
@@ -187,10 +143,11 @@
 }
 
 -(void)recordCover:(BOOL)cover{
-    if (cover) {
-        id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
-        if (data) {
-            _mArray = data;
+    
+    id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+    if (data) {
+        _mArray = data;
+        if(cover){
             SBModel *model = [[SBModel alloc] init];
             for (int i = 0; i < _mArray.count; i++) {
                 model = _mArray[i];
@@ -199,9 +156,8 @@
                 }
             }
         }
-    }
+}
     
-
     NSString *time = [SBTimeManager dateToStringWithDateFormat:@"HH:mm:ss"];
     NSString *date = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
     NSString *record = [NSString stringWithFormat:@"%@-%@-%@",date,[SBTimeManager weekdayStringFromDate],time];

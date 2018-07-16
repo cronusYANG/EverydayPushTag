@@ -11,6 +11,8 @@
 #import <Masonry.h>
 #import "SBModel.h"
 
+#define VERSION [UIDevice currentDevice].systemVersion
+
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic) UITableView *tableView;
@@ -44,8 +46,12 @@ static NSString *cellID = @"cell";
     [self.view addSubview:_tableView];
     _tableView.tableFooterView = [UIView new];
     
+    CGFloat top = 64;
+    if (VERSION.doubleValue < 11.0) {
+        top = 0;
+    }
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(64);
+        make.top.offset(top);
         make.left.right.bottom.offset(0);
     }];
 }
@@ -54,6 +60,8 @@ static NSString *cellID = @"cell";
     id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
     if (data) {
         self.dataArray = data;
+        self.dataArray = (NSMutableArray *)[[_dataArray reverseObjectEnumerator] allObjects];
+        [self.tableView reloadData];
     }
 }
 
