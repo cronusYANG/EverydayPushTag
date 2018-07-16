@@ -16,14 +16,14 @@
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong,nonatomic) UITableView *tableView;
-@property(strong,nonatomic) NSArray *dataArray;
+@property(strong,nonatomic) NSMutableArray *dataArray;
 @end
 
 @implementation SBRecordController
 
--(NSArray *)dataArray{
+-(NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = [NSArray array];
+        _dataArray = [NSMutableArray array];
     }
     return _dataArray;
 }
@@ -90,6 +90,23 @@ static NSString *cellID = @"cell";
     }
     cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_dataArray removeObjectAtIndex:indexPath.row];
+    [SBDataManager saveData:_dataArray withFileName:@"TIMEDATA"];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)didReceiveMemoryWarning {
