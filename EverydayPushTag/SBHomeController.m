@@ -42,7 +42,7 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self removeSelfView];
+    
 }
 
 - (void)removeSelfView
@@ -110,6 +110,36 @@
     }];
     
     [_timeView.signIn addTarget:self action:@selector(clickTag) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *recordBtn = [[UIButton alloc] init];
+    [recordBtn setImage:[UIImage imageNamed:@"Timer"] forState:UIControlStateNormal];
+    [self.view addSubview:recordBtn];
+    
+    UIButton *settingBtn = [[UIButton alloc] init];
+    [settingBtn setImage:[UIImage imageNamed:@"Settings"] forState:UIControlStateNormal];
+    [self.view addSubview:settingBtn];
+    
+    [recordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.offset(-5);
+        make.right.offset(-8);
+        make.width.height.offset(45);
+    }];
+    
+    [settingBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(recordBtn);
+        make.left.offset(8);
+        make.width.height.offset(45);
+    }];
+    [recordBtn addTarget:self action:@selector(clickRccord) forControlEvents:UIControlEventTouchUpInside];
+    [settingBtn addTarget:self action:@selector(clickSetting) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+-(void)clickRccord{
+    [self removeSelfView];
+}
+
+-(void)clickSetting{
     
 }
 

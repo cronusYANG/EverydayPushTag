@@ -143,8 +143,8 @@ static NSString *cellID = @"cell";
         tableView.editing = NO;
     }];
     
-    if (![SBTimeManager isSameDay:model.date]) {
-        return @[action0];
+    if ([SBTimeManager isSameDay:model.date]) {
+        return @[action1];
     }else{
         return @[action1, action0];
     }
