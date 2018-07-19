@@ -145,6 +145,10 @@ static NSString *cellID = @"cell";
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+}
+
 -(void)alterDate:(void(^)(NSDate *date))date{
     LYSDatePickerController *datePicker = [[LYSDatePickerController alloc] init];
     datePicker.headerView.backgroundColor = [UIColor colorWithRed:84/255.0 green:150/255.0 blue:242/255.0 alpha:1];
@@ -163,6 +167,7 @@ static NSString *cellID = @"cell";
     [datePicker setDidSelectDatePicker:date];
     [datePicker showDatePickerWithController:self];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
