@@ -164,6 +164,8 @@
     SBModel *model = [[SBModel alloc] init];
     model.record = record;
     model.date = [SBTimeManager nowTime];
+    model.strDate = date;
+    model.time = time;
     model.week = [SBTimeManager weekdayStringFromDate];
     [_mArray addObject:model];
     [SBDataManager saveData:_mArray withFileName:@"TIMEDATA"];

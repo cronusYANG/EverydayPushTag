@@ -62,7 +62,7 @@ static NSString *cellID = @"cell";
     id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
     if (data) {
         self.dataArray = data;
-        self.dataArray = (NSMutableArray *)[[_dataArray reverseObjectEnumerator] allObjects];
+//        self.dataArray = (NSMutableArray *)[[_dataArray reverseObjectEnumerator] allObjects];
         [self.tableView reloadData];
     }
 }
@@ -74,7 +74,9 @@ static NSString *cellID = @"cell";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     SBModel *mode = [[SBModel alloc] init];
-    mode = _dataArray[indexPath.row];
+    NSMutableArray *arr = [NSMutableArray array];
+    arr = (NSMutableArray *)[[_dataArray reverseObjectEnumerator] allObjects];
+    mode = arr[indexPath.row];
     cell.textLabel.text = mode.record;
     NSString *imageName;
     if ([mode.week isEqualToString:@"星期一"]) {
@@ -112,13 +114,15 @@ static NSString *cellID = @"cell";
     UITableViewRowAction *action0 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"修改" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         
         [weakSelf alterDate:^(NSDate *date) {
-            [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
+            
             SBModel *model = [[SBModel alloc] init];
+            model = weakSelf.dataArray[indexPath.row];
+            [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"HH:mm:ss"];
             NSString *newTime = [dateFormat stringFromDate:date];
-            NSString *newDate = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
-            model.record = [NSString stringWithFormat:@"%@-%@-%@",newDate,[SBTimeManager weekdayStringFromDate],newTime];
+            model.time = newTime;
+            model.record = [NSString stringWithFormat:@"%@-%@-%@",model.strDate,model.week,newTime];
             [weakSelf.dataArray addObject:model];
             [SBDataManager saveData:weakSelf.dataArray withFileName:@"TIMEDATA"];
             [weakSelf loadData];

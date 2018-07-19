@@ -11,6 +11,7 @@
 @interface SBModel : NSObject
 @property(strong,nonatomic) NSString *record;
 @property(strong,nonatomic) NSDate *date;
-
+@property(strong,nonatomic) NSString *strDate;
 @property(strong,nonatomic) NSString *week;
+@property(strong,nonatomic) NSString *time;
 @end
