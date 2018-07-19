@@ -15,6 +15,23 @@
 		A437F53120F38DAB002975B6 /* EverydayPushTagUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53020F38DAB002975B6 /* EverydayPushTagUITests.m */; };
 		A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F53F20F38EEB002975B6 /* SBHomeController.m */; };
 		A437F54420F391D5002975B6 /* SBTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = A437F54320F391D5002975B6 /* SBTagView.m */; };
+		A46671052100423500DE5832 /* LYSDateContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670E32100423500DE5832 /* LYSDateContentView.m */; };
+		A46671062100423500DE5832 /* LYSDatePopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670E72100423500DE5832 /* LYSDatePopViewController.m */; };
+		A46671072100423500DE5832 /* LYSDateBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670EF2100423500DE5832 /* LYSDateBaseViewController.m */; };
+		A46671082100423500DE5832 /* LYSDateLogicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F02100423500DE5832 /* LYSDateLogicViewController.m */; };
+		A46671092100423500DE5832 /* LYSDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F32100423500DE5832 /* LYSDatePickerViewController.m */; };
+		A466710A2100423500DE5832 /* LYSDateHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F42100423500DE5832 /* LYSDateHeaderViewController.m */; };
+		A466710B2100423500DE5832 /* LYSDatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F52100423500DE5832 /* LYSDatePickerLabel.m */; };
+		A466710C2100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F72100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.m */; };
+		A466710D2100423500DE5832 /* LYSDateBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F82100423500DE5832 /* LYSDateBasicViewController.m */; };
+		A466710E2100423500DE5832 /* LYSDateIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670F92100423500DE5832 /* LYSDateIndicatorViewController.m */; };
+		A466710F2100423500DE5832 /* LYSDatePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670FB2100423500DE5832 /* LYSDatePickerManager.m */; };
+		A46671102100423500DE5832 /* LYSDatePickerTypeDayDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670FD2100423500DE5832 /* LYSDatePickerTypeDayDelegate.m */; };
+		A46671112100423500DE5832 /* LYSDatePickerTypeTimeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670FE2100423500DE5832 /* LYSDatePickerTypeTimeDelegate.m */; };
+		A46671122100423500DE5832 /* LYSDatePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A46670FF2100423500DE5832 /* LYSDatePickerItem.m */; };
+		A46671132100423500DE5832 /* LYSDatePickerTypeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A46671002100423500DE5832 /* LYSDatePickerTypeBase.m */; };
+		A46671142100423500DE5832 /* LYSDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46671022100423500DE5832 /* LYSDatePickerController.m */; };
+		A46671152100423500DE5832 /* LYSDatePickerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46671032100423500DE5832 /* LYSDatePickerHeaderView.m */; };
 		A4BB888220F65C68005B70B0 /* SBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888120F65C68005B70B0 /* SBModel.m */; };
 		A4BB888920F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4BB888420F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist */; };
 		A4BB888A20F77E3F005B70B0 /* STLVideoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888620F77E3F005B70B0 /* STLVideoFunctions.m */; };
@@ -64,6 +81,41 @@
 		A437F53F20F38EEB002975B6 /* SBHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBHomeController.m; sourceTree = "<group>"; };
 		A437F54220F391D5002975B6 /* SBTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTagView.h; sourceTree = "<group>"; };
 		A437F54320F391D5002975B6 /* SBTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTagView.m; sourceTree = "<group>"; };
+		A46670E22100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeDayAndTimeDelegate.h; sourceTree = "<group>"; };
+		A46670E32100423500DE5832 /* LYSDateContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateContentView.m; sourceTree = "<group>"; };
+		A46670E42100423500DE5832 /* LYSDateHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateHeaderViewController.h; sourceTree = "<group>"; };
+		A46670E52100423500DE5832 /* LYSDatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerLabel.h; sourceTree = "<group>"; };
+		A46670E62100423500DE5832 /* LYSDatePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerManager.h; sourceTree = "<group>"; };
+		A46670E72100423500DE5832 /* LYSDatePopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePopViewController.m; sourceTree = "<group>"; };
+		A46670E82100423500DE5832 /* LYSDateIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateIndicatorViewController.h; sourceTree = "<group>"; };
+		A46670E92100423500DE5832 /* LYSDateBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateBasicViewController.h; sourceTree = "<group>"; };
+		A46670EA2100423500DE5832 /* LYSDatePickerTypeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeBase.h; sourceTree = "<group>"; };
+		A46670EB2100423500DE5832 /* LYSDatePickerSelectDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerSelectDelegate.h; sourceTree = "<group>"; };
+		A46670EC2100423500DE5832 /* LYSDatePickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerItem.h; sourceTree = "<group>"; };
+		A46670ED2100423500DE5832 /* LYSDatePickerTypeDayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeDayDelegate.h; sourceTree = "<group>"; };
+		A46670EE2100423500DE5832 /* LYSDatePickerTypeTimeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeTimeDelegate.h; sourceTree = "<group>"; };
+		A46670EF2100423500DE5832 /* LYSDateBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateBaseViewController.m; sourceTree = "<group>"; };
+		A46670F02100423500DE5832 /* LYSDateLogicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateLogicViewController.m; sourceTree = "<group>"; };
+		A46670F12100423500DE5832 /* LYSDatePickerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerHeaderView.h; sourceTree = "<group>"; };
+		A46670F22100423500DE5832 /* LYSDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerController.h; sourceTree = "<group>"; };
+		A46670F32100423500DE5832 /* LYSDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerViewController.m; sourceTree = "<group>"; };
+		A46670F42100423500DE5832 /* LYSDateHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateHeaderViewController.m; sourceTree = "<group>"; };
+		A46670F52100423500DE5832 /* LYSDatePickerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerLabel.m; sourceTree = "<group>"; };
+		A46670F62100423500DE5832 /* LYSDateContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateContentView.h; sourceTree = "<group>"; };
+		A46670F72100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeDayAndTimeDelegate.m; sourceTree = "<group>"; };
+		A46670F82100423500DE5832 /* LYSDateBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateBasicViewController.m; sourceTree = "<group>"; };
+		A46670F92100423500DE5832 /* LYSDateIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateIndicatorViewController.m; sourceTree = "<group>"; };
+		A46670FA2100423500DE5832 /* LYSDatePopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePopViewController.h; sourceTree = "<group>"; };
+		A46670FB2100423500DE5832 /* LYSDatePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerManager.m; sourceTree = "<group>"; };
+		A46670FC2100423500DE5832 /* LYSDateBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateBaseViewController.h; sourceTree = "<group>"; };
+		A46670FD2100423500DE5832 /* LYSDatePickerTypeDayDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeDayDelegate.m; sourceTree = "<group>"; };
+		A46670FE2100423500DE5832 /* LYSDatePickerTypeTimeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeTimeDelegate.m; sourceTree = "<group>"; };
+		A46670FF2100423500DE5832 /* LYSDatePickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerItem.m; sourceTree = "<group>"; };
+		A46671002100423500DE5832 /* LYSDatePickerTypeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeBase.m; sourceTree = "<group>"; };
+		A46671012100423500DE5832 /* LYSDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerViewController.h; sourceTree = "<group>"; };
+		A46671022100423500DE5832 /* LYSDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerController.m; sourceTree = "<group>"; };
+		A46671032100423500DE5832 /* LYSDatePickerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerHeaderView.m; sourceTree = "<group>"; };
+		A46671042100423500DE5832 /* LYSDateLogicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateLogicViewController.h; sourceTree = "<group>"; };
 		A4BB888020F65C68005B70B0 /* SBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBModel.h; sourceTree = "<group>"; };
 		A4BB888120F65C68005B70B0 /* SBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBModel.m; sourceTree = "<group>"; };
 		A4BB888420F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "C415F3F13BBD50B1-info.plist"; sourceTree = "<group>"; };
@@ -155,6 +207,7 @@
 		A437F50B20F38DAA002975B6 /* EverydayPushTag */ = {
 			isa = PBXGroup;
 			children = (
+				A46670E12100423500DE5832 /* LYSDatePickerController */,
 				A4BB888C20F78D4B005B70B0 /* Video */,
 				A4BB888320F77E3F005B70B0 /* STLBGVideo */,
 				A4E9EA0920F4B12700C27FE5 /* Util */,
@@ -203,6 +256,48 @@
 				A4E9EA0720F4B0AD00C27FE5 /* SBTimeView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A46670E12100423500DE5832 /* LYSDatePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				A46670E22100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.h */,
+				A46670E32100423500DE5832 /* LYSDateContentView.m */,
+				A46670E42100423500DE5832 /* LYSDateHeaderViewController.h */,
+				A46670E52100423500DE5832 /* LYSDatePickerLabel.h */,
+				A46670E62100423500DE5832 /* LYSDatePickerManager.h */,
+				A46670E72100423500DE5832 /* LYSDatePopViewController.m */,
+				A46670E82100423500DE5832 /* LYSDateIndicatorViewController.h */,
+				A46670E92100423500DE5832 /* LYSDateBasicViewController.h */,
+				A46670EA2100423500DE5832 /* LYSDatePickerTypeBase.h */,
+				A46670EB2100423500DE5832 /* LYSDatePickerSelectDelegate.h */,
+				A46670EC2100423500DE5832 /* LYSDatePickerItem.h */,
+				A46670ED2100423500DE5832 /* LYSDatePickerTypeDayDelegate.h */,
+				A46670EE2100423500DE5832 /* LYSDatePickerTypeTimeDelegate.h */,
+				A46670EF2100423500DE5832 /* LYSDateBaseViewController.m */,
+				A46670F02100423500DE5832 /* LYSDateLogicViewController.m */,
+				A46670F12100423500DE5832 /* LYSDatePickerHeaderView.h */,
+				A46670F22100423500DE5832 /* LYSDatePickerController.h */,
+				A46670F32100423500DE5832 /* LYSDatePickerViewController.m */,
+				A46670F42100423500DE5832 /* LYSDateHeaderViewController.m */,
+				A46670F52100423500DE5832 /* LYSDatePickerLabel.m */,
+				A46670F62100423500DE5832 /* LYSDateContentView.h */,
+				A46670F72100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.m */,
+				A46670F82100423500DE5832 /* LYSDateBasicViewController.m */,
+				A46670F92100423500DE5832 /* LYSDateIndicatorViewController.m */,
+				A46670FA2100423500DE5832 /* LYSDatePopViewController.h */,
+				A46670FB2100423500DE5832 /* LYSDatePickerManager.m */,
+				A46670FC2100423500DE5832 /* LYSDateBaseViewController.h */,
+				A46670FD2100423500DE5832 /* LYSDatePickerTypeDayDelegate.m */,
+				A46670FE2100423500DE5832 /* LYSDatePickerTypeTimeDelegate.m */,
+				A46670FF2100423500DE5832 /* LYSDatePickerItem.m */,
+				A46671002100423500DE5832 /* LYSDatePickerTypeBase.m */,
+				A46671012100423500DE5832 /* LYSDatePickerViewController.h */,
+				A46671022100423500DE5832 /* LYSDatePickerController.m */,
+				A46671032100423500DE5832 /* LYSDatePickerHeaderView.m */,
+				A46671042100423500DE5832 /* LYSDateLogicViewController.h */,
+			);
+			path = LYSDatePickerController;
 			sourceTree = "<group>";
 		};
 		A4BB888320F77E3F005B70B0 /* STLBGVideo */ = {
@@ -392,17 +487,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A466710E2100423500DE5832 /* LYSDateIndicatorViewController.m in Sources */,
+				A466710F2100423500DE5832 /* LYSDatePickerManager.m in Sources */,
 				A4BB888A20F77E3F005B70B0 /* STLVideoFunctions.m in Sources */,
+				A46671152100423500DE5832 /* LYSDatePickerHeaderView.m in Sources */,
+				A46671062100423500DE5832 /* LYSDatePopViewController.m in Sources */,
+				A466710D2100423500DE5832 /* LYSDateBasicViewController.m in Sources */,
 				A437F51C20F38DAB002975B6 /* main.m in Sources */,
 				A437F50E20F38DAA002975B6 /* AppDelegate.m in Sources */,
 				A4D2E47E20F4EC6E001F5ADE /* SBFileManager.m in Sources */,
 				A4E9EA0820F4B0AD00C27FE5 /* SBTimeView.m in Sources */,
 				A4BB888220F65C68005B70B0 /* SBModel.m in Sources */,
+				A46671072100423500DE5832 /* LYSDateBaseViewController.m in Sources */,
+				A46671092100423500DE5832 /* LYSDatePickerViewController.m in Sources */,
 				A437F54420F391D5002975B6 /* SBTagView.m in Sources */,
 				A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */,
+				A46671112100423500DE5832 /* LYSDatePickerTypeTimeDelegate.m in Sources */,
+				A46671082100423500DE5832 /* LYSDateLogicViewController.m in Sources */,
+				A466710A2100423500DE5832 /* LYSDateHeaderViewController.m in Sources */,
+				A46671132100423500DE5832 /* LYSDatePickerTypeBase.m in Sources */,
+				A46671102100423500DE5832 /* LYSDatePickerTypeDayDelegate.m in Sources */,
 				A4BB888B20F77E3F005B70B0 /* STLVideoViewController.m in Sources */,
+				A46671142100423500DE5832 /* LYSDatePickerController.m in Sources */,
 				A4E9EA0C20F4B14A00C27FE5 /* SBTimeManager.m in Sources */,
+				A46671052100423500DE5832 /* LYSDateContentView.m in Sources */,
 				A4D2E47B20F4EC1A001F5ADE /* SBRecordController.m in Sources */,
+				A466710C2100423500DE5832 /* LYSDatePickerTypeDayAndTimeDelegate.m in Sources */,
+				A46671122100423500DE5832 /* LYSDatePickerItem.m in Sources */,
+				A466710B2100423500DE5832 /* LYSDatePickerLabel.m in Sources */,
 				A4D2E48E20F4FCC0001F5ADE /* SBDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

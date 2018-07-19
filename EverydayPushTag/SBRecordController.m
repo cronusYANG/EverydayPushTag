@@ -10,11 +10,13 @@
 #import "SBDataManager.h"
 #import <Masonry.h>
 #import "SBModel.h"
+#import "LYSDatePickerController.h"
+#import "SBTimeManager.h"
 
 #define VERSION [UIDevice currentDevice].systemVersion
 
 static NSString *cellID = @"cell";
-@interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource>
+@interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource,LYSDatePickerSelectDelegate>
 @property(strong,nonatomic) UITableView *tableView;
 @property(strong,nonatomic) NSMutableArray *dataArray;
 @end
@@ -98,16 +100,64 @@ static NSString *cellID = @"cell";
     return YES;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return @"删除";
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_dataArray removeObjectAtIndex:indexPath.row];
-    [SBDataManager saveData:_dataArray withFileName:@"TIMEDATA"];
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView setEditing:YES animated:YES];
+    self.tableView.allowsMultipleSelectionDuringEditing = YES;
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    __weak __typeof(self) weakSelf = self;
+    UITableViewRowAction *action0 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"修改" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        
+        [weakSelf alterDate:^(NSDate *date) {
+            [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
+            SBModel *model = [[SBModel alloc] init];
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"HH:mm:ss"];
+            NSString *newTime = [dateFormat stringFromDate:date];
+            NSString *newDate = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
+            model.record = [NSString stringWithFormat:@"%@-%@-%@",newDate,[SBTimeManager weekdayStringFromDate],newTime];
+            [weakSelf.dataArray addObject:model];
+            [SBDataManager saveData:weakSelf.dataArray withFileName:@"TIMEDATA"];
+            [weakSelf loadData];
+            
+        }];
+        
+        tableView.editing = NO;
+    }];
+    
+    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        
+        [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
+        [SBDataManager saveData:weakSelf.dataArray withFileName:@"TIMEDATA"];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        tableView.editing = NO;
+    }];
+    
+    return @[action1, action0];
+    
+}
+
+-(void)alterDate:(void(^)(NSDate *date))date{
+    LYSDatePickerController *datePicker = [[LYSDatePickerController alloc] init];
+    datePicker.headerView.backgroundColor = [UIColor colorWithRed:84/255.0 green:150/255.0 blue:242/255.0 alpha:1];
+    datePicker.indicatorHeight = 5;
+    datePicker.delegate = self;
+    datePicker.headerView.centerItem.title = @"";
+    datePicker.headerView.centerItem.textColor = [UIColor whiteColor];
+    datePicker.headerView.leftItem.textColor = [UIColor whiteColor];
+    datePicker.headerView.rightItem.textColor = [UIColor whiteColor];
+    datePicker.pickHeaderHeight = 40;
+    datePicker.pickType = LYSDatePickerTypeTime;
+    datePicker.minuteLoop = YES;
+    datePicker.headerView.showTimeLabel = NO;
+    datePicker.weakDayType = LYSDatePickerWeakDayTypeUSDefault;
+    datePicker.showWeakDay = YES;
+    [datePicker setDidSelectDatePicker:date];
+    [datePicker showDatePickerWithController:self];
 }
 
 - (void)didReceiveMemoryWarning {
