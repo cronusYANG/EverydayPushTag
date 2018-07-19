@@ -32,6 +32,7 @@
 		A46671132100423500DE5832 /* LYSDatePickerTypeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A46671002100423500DE5832 /* LYSDatePickerTypeBase.m */; };
 		A46671142100423500DE5832 /* LYSDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46671022100423500DE5832 /* LYSDatePickerController.m */; };
 		A46671152100423500DE5832 /* LYSDatePickerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46671032100423500DE5832 /* LYSDatePickerHeaderView.m */; };
+		A49E86072100E00F004C9342 /* SBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A49E86062100E00F004C9342 /* SBNotificationManager.m */; };
 		A4BB888220F65C68005B70B0 /* SBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888120F65C68005B70B0 /* SBModel.m */; };
 		A4BB888920F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4BB888420F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist */; };
 		A4BB888A20F77E3F005B70B0 /* STLVideoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888620F77E3F005B70B0 /* STLVideoFunctions.m */; };
@@ -116,6 +117,8 @@
 		A46671022100423500DE5832 /* LYSDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerController.m; sourceTree = "<group>"; };
 		A46671032100423500DE5832 /* LYSDatePickerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerHeaderView.m; sourceTree = "<group>"; };
 		A46671042100423500DE5832 /* LYSDateLogicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateLogicViewController.h; sourceTree = "<group>"; };
+		A49E86052100E00F004C9342 /* SBNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBNotificationManager.h; sourceTree = "<group>"; };
+		A49E86062100E00F004C9342 /* SBNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBNotificationManager.m; sourceTree = "<group>"; };
 		A4BB888020F65C68005B70B0 /* SBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBModel.h; sourceTree = "<group>"; };
 		A4BB888120F65C68005B70B0 /* SBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBModel.m; sourceTree = "<group>"; };
 		A4BB888420F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "C415F3F13BBD50B1-info.plist"; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 				A4E9EA0B20F4B14A00C27FE5 /* SBTimeManager.m */,
 				A4D2E47C20F4EC6E001F5ADE /* SBFileManager.h */,
 				A4D2E47D20F4EC6E001F5ADE /* SBFileManager.m */,
+				A49E86052100E00F004C9342 /* SBNotificationManager.h */,
+				A49E86062100E00F004C9342 /* SBNotificationManager.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				A46671092100423500DE5832 /* LYSDatePickerViewController.m in Sources */,
 				A437F54420F391D5002975B6 /* SBTagView.m in Sources */,
 				A437F54020F38EEB002975B6 /* SBHomeController.m in Sources */,
+				A49E86072100E00F004C9342 /* SBNotificationManager.m in Sources */,
 				A46671112100423500DE5832 /* LYSDatePickerTypeTimeDelegate.m in Sources */,
 				A46671082100423500DE5832 /* LYSDateLogicViewController.m in Sources */,
 				A466710A2100423500DE5832 /* LYSDateHeaderViewController.m in Sources */,

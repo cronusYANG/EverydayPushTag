@@ -8,12 +8,10 @@
 
 #import "SBRecordController.h"
 #import "SBDataManager.h"
-#import <Masonry.h>
 #import "SBModel.h"
 #import "LYSDatePickerController.h"
 #import "SBTimeManager.h"
-
-#define VERSION [UIDevice currentDevice].systemVersion
+#import "SBNotificationManager.h"
 
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource,LYSDatePickerSelectDelegate>
@@ -59,7 +57,7 @@ static NSString *cellID = @"cell";
 }
 
 -(void)loadData{
-    id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+    id data = [SBDataManager loadDataWithPath:TIMEDATA];
     if (data) {
         self.dataArray = data;
 //        self.dataArray = (NSMutableArray *)[[_dataArray reverseObjectEnumerator] allObjects];
@@ -110,13 +108,13 @@ static NSString *cellID = @"cell";
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    __weak __typeof(self) weakSelf = self;
+    WeekSelf;
+    SBModel *model = [[SBModel alloc] init];
+    model = weakSelf.dataArray[indexPath.row];
     UITableViewRowAction *action0 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"修改" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         
         [weakSelf alterDate:^(NSDate *date) {
             
-            SBModel *model = [[SBModel alloc] init];
-            model = weakSelf.dataArray[indexPath.row];
             [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"HH:mm:ss"];
@@ -124,8 +122,12 @@ static NSString *cellID = @"cell";
             model.time = newTime;
             model.record = [NSString stringWithFormat:@"%@-%@-%@",model.strDate,model.week,newTime];
             [weakSelf.dataArray addObject:model];
-            [SBDataManager saveData:weakSelf.dataArray withFileName:@"TIMEDATA"];
+            [SBDataManager saveData:weakSelf.dataArray withFileName:TIMEDATA];
             [weakSelf loadData];
+            NSTimeInterval secondsInterval= [[SBTimeManager nowTime] timeIntervalSinceDate:date];
+            NSTimeInterval countdown = (3600*9)-secondsInterval;
+            NSString *body = [NSString stringWithFormat:@"今天%@打的卡,现在可以走了",newTime];
+            [SBNotificationManager getOffWorkToNotificationWithTitle:@"下班了时间到" subtitle:@"" body:body timeInterval:countdown];
             
         }];
         
@@ -135,13 +137,18 @@ static NSString *cellID = @"cell";
     UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         
         [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
-        [SBDataManager saveData:weakSelf.dataArray withFileName:@"TIMEDATA"];
+        [SBDataManager saveData:weakSelf.dataArray withFileName:TIMEDATA];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         tableView.editing = NO;
     }];
     
-    return @[action1, action0];
+    if (![SBTimeManager isSameDay:model.date]) {
+        return @[action0];
+    }else{
+        return @[action1, action0];
+    }
+    
     
 }
 

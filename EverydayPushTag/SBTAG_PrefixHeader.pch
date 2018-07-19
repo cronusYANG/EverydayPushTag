@@ -14,5 +14,13 @@
 
 #import <Masonry.h>
 
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define WeekSelf __weak __typeof(self) weakSelf = self
+
+#define VERSION [UIDevice currentDevice].systemVersion
+
+#define TIMEDATA @"TIMEDATA"
 
 #endif /* SBTAG_PrefixHeader_pch */

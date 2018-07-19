@@ -8,7 +8,6 @@
 
 #import "SBHomeController.h"
 #import "SBTimeView.h"
-#import <Masonry.h>
 #import "SBTagView.h"
 #import "SBTimeManager.h"
 #import "SBDataManager.h"
@@ -16,9 +15,9 @@
 #import "SBModel.h"
 #import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
+#import "SBNotificationManager.h"
 
-#define WIDTH [UIScreen mainScreen].bounds.size.width
-#define HEIGHT [UIScreen mainScreen].bounds.size.height
+
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
 @property(strong,nonatomic) SBTagView *tagView;
@@ -115,7 +114,7 @@
 }
 
 -(void)clickTag{
-    id saveTime = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+    id saveTime = [SBDataManager loadDataWithPath:TIMEDATA];
     NSMutableArray *arr = [NSMutableArray array];
     arr = saveTime;
     SBModel *model = [[SBModel alloc] init];
@@ -146,7 +145,7 @@
 
 -(void)recordCover:(BOOL)cover{
     
-    id data = [SBDataManager loadDataWithPath:@"TIMEDATA"];
+    id data = [SBDataManager loadDataWithPath:TIMEDATA];
     if (data) {
         _mArray = data;
         if(cover){
@@ -170,7 +169,7 @@
     model.time = time;
     model.week = [SBTimeManager weekdayStringFromDate];
     [_mArray addObject:model];
-    [SBDataManager saveData:_mArray withFileName:@"TIMEDATA"];
+    [SBDataManager saveData:_mArray withFileName:TIMEDATA];
 
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"记录成功" message:time preferredStyle:UIAlertControllerStyleAlert];
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);//震动提示
@@ -179,55 +178,11 @@
     AudioServicesPlaySystemSound(soundIDTest);
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSTimeInterval countdown = 3600 * 9;
-        NSString *subtitle = [NSString stringWithFormat:@"今天%@打的卡",time];
-        [self getOffWorkToNotificationWithTitle:@"可以下班了" subtitle:subtitle body:@"Behind every successful man there's a lot of unsuccessful years." timeInterval:countdown];
+        NSString *body = [NSString stringWithFormat:@"今天%@打的卡,现在可以走了",time];
+        [SBNotificationManager getOffWorkToNotificationWithTitle:@"下班了时间到" subtitle:@"" body:body timeInterval:countdown];
     }];
     [actionSheet addAction:action1];
     [self presentViewController:actionSheet animated:YES completion:nil];
-}
-
--(void)getOffWorkToNotificationWithTitle:(NSString *)title subtitle:(NSString *)subtitle body:(NSString *)body timeInterval:(NSTimeInterval)timeInterval{
-    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-    // 标题
-    content.title = title;
-    // 次标题
-    content.subtitle = subtitle;
-    // 内容
-    content.body = body;
-    
-    // app显示通知数量的角标
-    content.badge = @0;
-    
-    // 通知的提示声音，这里用的默认的声音
-    content.sound = [UNNotificationSound defaultSound];
-    
-//    NSURL *imageUrl = [[NSBundle mainBundle] URLForResource:@"jianglai" withExtension:@"jpg"];
-//    UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"imageIndetifier" URL:imageUrl options:nil error:nil];
-//
-//    // 附件
-//    content.attachments = @[attachment];
-    
-    // 标识符
-    content.categoryIdentifier = @"categoryIndentifier";
-    
-    // 2、创建通知触发
-    /* 触发器分三种：
-     UNTimeIntervalNotificationTrigger : 在一定时间后触发，如果设置重复的话，timeInterval不能小于60
-     UNCalendarNotificationTrigger : 在某天某时触发，可重复
-     UNLocationNotificationTrigger : 进入或离开某个地理区域时触发
-     */
-    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:timeInterval repeats:NO];
-    
-    // 3、创建通知请求
-    UNNotificationRequest *notificationRequest = [UNNotificationRequest requestWithIdentifier:@"KFGroupNotification" content:content trigger:trigger];
-    
-    // 4、将请求加入通知中心
-    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:notificationRequest withCompletionHandler:^(NSError * _Nullable error) {
-        if (error == nil) {
-            NSLog(@"已成功加推送%@",notificationRequest.identifier);
-        }
-    }];
-
 }
 
 - (void)didReceiveMemoryWarning {
