@@ -51,7 +51,7 @@
     if (!_ispush) {
         _ispush = YES;
         SBRecordController *vc = [[SBRecordController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        [self presentViewController:vc animated:YES completion:nil];
     }
 
 }
@@ -69,7 +69,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
+//    [self.navigationController setNavigationBarHidden:NO];
     
     [self.timer invalidate];
 }

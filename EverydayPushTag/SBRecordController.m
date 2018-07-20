@@ -14,7 +14,7 @@
 #import "SBNotificationManager.h"
 
 static NSString *cellID = @"cell";
-@interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource,LYSDatePickerSelectDelegate>
+@interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource,LYSDatePickerSelectDelegate,UIScrollViewDelegate>
 @property(strong,nonatomic) UITableView *tableView;
 @property(strong,nonatomic) NSMutableArray *dataArray;
 @end
@@ -38,22 +38,43 @@ static NSString *cellID = @"cell";
 
 -(void)setupUI{
     self.title = @"Record";
-    self.view.backgroundColor = [UIColor whiteColor];
-    _tableView = [[UITableView alloc] init];
+        self.view.backgroundColor = [UIColor whiteColor];
+    
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iClarified-iOS11"]];
+        [self.view addSubview:imgView];
+    
+        [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.left.right.offset(0);
+        }];
+    
+    // 背景毛玻璃
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    effectView.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    [self.view addSubview:effectView];
+    
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT/1.5) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.backgroundColor = [UIColor clearColor];
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableView];
     _tableView.tableFooterView = [UIView new];
     
-    CGFloat top = 64;
-    if (VERSION.doubleValue < 11.0) {
-        top = 0;
-    }
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(top);
-        make.left.right.bottom.offset(0);
+    UIButton *dismissBtn = [[UIButton alloc] init];
+    [dismissBtn setImage:[UIImage imageNamed:@"power"] forState:UIControlStateNormal];
+    [self.view addSubview:dismissBtn];
+    [dismissBtn addTarget:self action:@selector(clickDismissBtn) forControlEvents:UIControlEventTouchUpInside];
+
+    [dismissBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.offset(0);
+        make.bottom.offset(-50);
+        make.width.height.offset(60);
     }];
+}
+
+-(void)clickDismissBtn{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 -(void)loadData{
@@ -91,6 +112,7 @@ static NSString *cellID = @"cell";
         imageName = @"overtime";
     }
     cell.imageView.image = [UIImage imageNamed:imageName];
+    cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
