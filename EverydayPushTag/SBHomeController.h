@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "STLVideoViewController.h"
 
-@interface SBHomeController : STLVideoViewController
+@interface SBHomeController : UIViewController
 
 @end

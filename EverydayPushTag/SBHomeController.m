@@ -90,14 +90,20 @@
 }
 
 -(void)setupUI{
-//    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor yellowColor];
     
-//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smile"]];
-//    [self.view addSubview:imgView];
-//
-//    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.bottom.left.right.offset(0);
-//    }];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iClarified-iOS11"]];
+    [self.view addSubview:imgView];
+
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.offset(0);
+    }];
+    
+    // 背景毛玻璃
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    effectView.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    [self.view addSubview:effectView];
     
     _timeView = [[SBTimeView alloc] init];
     [self.view addSubview:_timeView];
