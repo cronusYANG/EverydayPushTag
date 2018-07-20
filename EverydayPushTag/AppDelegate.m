@@ -24,7 +24,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setRootViewController:nav];
     [self.window makeKeyAndVisible];
-    
+    [NSThread sleepForTimeInterval:2.0];
     [self requestAuthor];
     return YES;
 }
