@@ -16,7 +16,7 @@
 #import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 #import "SBNotificationManager.h"
-
+#import "STLVideoFunctions.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;

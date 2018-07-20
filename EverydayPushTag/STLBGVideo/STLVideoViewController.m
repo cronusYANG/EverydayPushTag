@@ -42,7 +42,10 @@
 
 - (void)preparePlayback {
     if (self.player == nil) {
-        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[STLVideoFunctions getVideoUrl] ofType:[STLVideoFunctions getVideoType]]];
+        NSArray *arr = @[@"IMB_WlriTR",@"IMB_8STunS",@"IMB_cLIlmk",@"IMB_sxPtFi",@"Marvel",@"BridgeLoop-640p"];
+        int value = (arc4random() % (arr.count-1));
+        NSString *resource = arr[value];
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:resource ofType:[STLVideoFunctions getVideoType]]];
         self.player = [[MPMoviePlayerController alloc] initWithContentURL:url];
         [self.player setControlStyle:MPMovieControlStyleNone];
         [self.player prepareToPlay];
@@ -93,7 +96,6 @@
         [self preparePlayback];
     }
 }
-
 
 - (void)viewWillAppear:(BOOL)animated {
 
