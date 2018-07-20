@@ -90,14 +90,14 @@
 }
 
 -(void)setupUI{
-    self.view.backgroundColor = [UIColor yellowColor];
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iClarified-iOS11"]];
-    [self.view addSubview:imgView];
-
-    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.left.right.offset(0);
-    }];
+//    self.view.backgroundColor = [UIColor yellowColor];
+//    
+//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iClarified-iOS11"]];
+//    [self.view addSubview:imgView];
+//
+//    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.bottom.left.right.offset(0);
+//    }];
     
     // 背景毛玻璃
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
