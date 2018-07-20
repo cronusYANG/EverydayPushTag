@@ -220,11 +220,6 @@
 		A437F50B20F38DAA002975B6 /* EverydayPushTag */ = {
 			isa = PBXGroup;
 			children = (
-				A46670E12100423500DE5832 /* LYSDatePickerController */,
-				A4BB888C20F78D4B005B70B0 /* Video */,
-				A4BB888320F77E3F005B70B0 /* STLBGVideo */,
-				A4E9EA0920F4B12700C27FE5 /* Util */,
-				A437F54120F391B9002975B6 /* View */,
 				A437F50C20F38DAA002975B6 /* AppDelegate.h */,
 				A437F50D20F38DAA002975B6 /* AppDelegate.m */,
 				A437F53E20F38EEB002975B6 /* SBHomeController.h */,
@@ -238,6 +233,11 @@
 				A437F51A20F38DAB002975B6 /* Info.plist */,
 				A437F51B20F38DAB002975B6 /* main.m */,
 				A4D2E47F20F4EC9C001F5ADE /* SBTAG_PrefixHeader.pch */,
+				A437F54120F391B9002975B6 /* View */,
+				A46670E12100423500DE5832 /* LYSDatePickerController */,
+				A4BB888C20F78D4B005B70B0 /* Video */,
+				A4BB888320F77E3F005B70B0 /* STLBGVideo */,
+				A4E9EA0920F4B12700C27FE5 /* Util */,
 			);
 			path = EverydayPushTag;
 			sourceTree = "<group>";
