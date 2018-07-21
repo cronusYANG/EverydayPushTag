@@ -12,6 +12,7 @@
 #import "LYSDatePickerController.h"
 #import "SBTimeManager.h"
 #import "SBNotificationManager.h"
+#import <UserNotifications/UserNotifications.h>
 
 static NSString *cellID = @"cell";
 @interface SBRecordController ()<UITableViewDelegate,UITableViewDataSource,LYSDatePickerSelectDelegate,UIScrollViewDelegate>
@@ -161,7 +162,9 @@ static NSString *cellID = @"cell";
         [weakSelf.dataArray removeObjectAtIndex:indexPath.row];
         [SBDataManager saveData:weakSelf.dataArray withFileName:TIMEDATA];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
+        if ([SBTimeManager isSameDay:model.date]) {
+           [SBNotificationManager removeNotification];
+        }
         tableView.editing = NO;
     }];
     

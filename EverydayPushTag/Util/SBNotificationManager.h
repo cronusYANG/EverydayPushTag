@@ -10,4 +10,5 @@
 
 @interface SBNotificationManager : NSObject
 + (void)getOffWorkToNotificationWithTitle:(NSString *)title subtitle:(NSString *)subtitle body:(NSString *)body timeInterval:(NSTimeInterval)timeInterval;
++(void)removeNotification;
 @end

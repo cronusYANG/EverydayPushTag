@@ -54,4 +54,8 @@
     
 }
 
++(void)removeNotification{
+    [[UNUserNotificationCenter currentNotificationCenter] removeAllPendingNotificationRequests];
+}
+
 @end
