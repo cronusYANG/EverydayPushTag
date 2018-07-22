@@ -35,6 +35,7 @@
 		A46671172101923000DE5832 /* Marvel.MOV in Resources */ = {isa = PBXBuildFile; fileRef = A46671162101923000DE5832 /* Marvel.MOV */; };
 		A466711C2101CF9A00DE5832 /* IMB_sxPtFi.MOV in Resources */ = {isa = PBXBuildFile; fileRef = A46671182101CF9900DE5832 /* IMB_sxPtFi.MOV */; };
 		A466711E2101CF9A00DE5832 /* IMB_WlriTR.MOV in Resources */ = {isa = PBXBuildFile; fileRef = A466711A2101CF9900DE5832 /* IMB_WlriTR.MOV */; };
+		A47DB28A2104AE02001AE944 /* SBAddTagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A47DB2892104AE02001AE944 /* SBAddTagManager.m */; };
 		A49E86072100E00F004C9342 /* SBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A49E86062100E00F004C9342 /* SBNotificationManager.m */; };
 		A4BB888220F65C68005B70B0 /* SBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888120F65C68005B70B0 /* SBModel.m */; };
 		A4BB888920F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4BB888420F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist */; };
@@ -123,6 +124,8 @@
 		A46671162101923000DE5832 /* Marvel.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Marvel.MOV; sourceTree = "<group>"; };
 		A46671182101CF9900DE5832 /* IMB_sxPtFi.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMB_sxPtFi.MOV; sourceTree = "<group>"; };
 		A466711A2101CF9900DE5832 /* IMB_WlriTR.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMB_WlriTR.MOV; sourceTree = "<group>"; };
+		A47DB2882104AE02001AE944 /* SBAddTagManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBAddTagManager.h; sourceTree = "<group>"; };
+		A47DB2892104AE02001AE944 /* SBAddTagManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBAddTagManager.m; sourceTree = "<group>"; };
 		A49E86052100E00F004C9342 /* SBNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBNotificationManager.h; sourceTree = "<group>"; };
 		A49E86062100E00F004C9342 /* SBNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBNotificationManager.m; sourceTree = "<group>"; };
 		A4BB888020F65C68005B70B0 /* SBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBModel.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 				A4D2E47D20F4EC6E001F5ADE /* SBFileManager.m */,
 				A49E86052100E00F004C9342 /* SBNotificationManager.h */,
 				A49E86062100E00F004C9342 /* SBNotificationManager.m */,
+				A47DB2882104AE02001AE944 /* SBAddTagManager.h */,
+				A47DB2892104AE02001AE944 /* SBAddTagManager.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47DB28A2104AE02001AE944 /* SBAddTagManager.m in Sources */,
 				A466710E2100423500DE5832 /* LYSDateIndicatorViewController.m in Sources */,
 				A466710F2100423500DE5832 /* LYSDatePickerManager.m in Sources */,
 				A4BB888A20F77E3F005B70B0 /* STLVideoFunctions.m in Sources */,

@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import "SBHomeController.h"
 #import <UserNotifications/UserNotifications.h>
+#import "SBAddTagManager.h"
+#import "SBRecordController.h"
 
+#define TYPE_3DTOUCH_RECORD @"TYPE_3DTOUCH_RECORD"
+#define TYPE_3DTOUCH_TAG @"TYPE_3DTOUCH_TAG"
 @interface AppDelegate ()
 
 @end
@@ -26,6 +30,7 @@
     [self.window makeKeyAndVisible];
     [NSThread sleepForTimeInterval:2.0];
     [self requestAuthor];
+    [self creatUIApplicationShortcutItems];
     return YES;
 }
 
@@ -44,6 +49,56 @@
     }];
     
 }
+
+- (void)creatUIApplicationShortcutItems {
+    
+    UIMutableApplicationShortcutItem *tagItem = [self creatUIApplicationShortcutItem:@"img" actionType:nil itemType:TYPE_3DTOUCH_TAG title:@"标记"];
+    
+    
+    UIMutableApplicationShortcutItem *recordItem = [self creatUIApplicationShortcutItem:@"file" actionType:nil itemType:TYPE_3DTOUCH_RECORD title:@"历史记录"];
+    
+    NSMutableArray *items;
+    if (tagItem && recordItem) {
+        items = @[tagItem,recordItem].mutableCopy;
+    }
+    
+    if (items.count > 0) {
+        [UIApplication sharedApplication].shortcutItems = items;
+    }
+}
+
+-(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{
+    
+    if (shortcutItem) {
+        if ([shortcutItem.type isEqualToString:TYPE_3DTOUCH_TAG]) {
+            [SBAddTagManager addTag];
+        }else if ([shortcutItem.type isEqualToString:TYPE_3DTOUCH_RECORD]){
+            SBRecordController *vc = [[SBRecordController alloc] init];
+            [[SBAddTagManager getCurrentViewController] presentViewController:vc animated:YES completion:nil];
+        }
+    }
+    
+    if (completionHandler) {
+        completionHandler(YES);
+    }
+}
+
+-(UIMutableApplicationShortcutItem *)creatUIApplicationShortcutItem:(NSString*)iconName actionType:(NSString*)actionType itemType:(nullable NSString*)itemType title:(NSString*)title {
+    
+    UIApplicationShortcutIcon *icon = [UIApplicationShortcutIcon iconWithTemplateImageName:iconName];
+    
+    NSDictionary *userInfo = [NSDictionary dictionary];
+    if (actionType) {
+        userInfo = @{@"action_type":actionType};
+    } else {
+        userInfo = nil;
+    }
+    
+    UIMutableApplicationShortcutItem *item = [[UIMutableApplicationShortcutItem alloc] initWithType:itemType localizedTitle:title localizedSubtitle:@"" icon:icon userInfo:userInfo];
+    
+    return item;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

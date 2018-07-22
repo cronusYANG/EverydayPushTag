@@ -17,6 +17,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "SBNotificationManager.h"
 #import "STLVideoFunctions.h"
+#import "SBAddTagManager.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
@@ -28,12 +29,6 @@
 
 @implementation SBHomeController
 
-//-(NSMutableArray *)mArray{
-//    if (!_mArray) {
-//        _mArray = [NSMutableArray array];
-//    }
-//    return _mArray;
-//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _mArray = [NSMutableArray array];
@@ -150,33 +145,7 @@
 }
 
 -(void)clickTag{
-    id saveTime = [SBDataManager loadDataWithPath:TIMEDATA];
-    NSMutableArray *arr = [NSMutableArray array];
-    arr = saveTime;
-    SBModel *model = [[SBModel alloc] init];
-    BOOL isSameDay = false;
-    for (int i = 0; i < arr.count; i++) {
-        model = arr[i];
-        if ([SBTimeManager isSameDay:model.date]) {
-            isSameDay = true;
-        }
-    }
-    if (!isSameDay) {
-        [self recordCover:NO];
-    }else{
-        NSString *mes = [NSString stringWithFormat:@"今天已经记录一次,时间为:%@,是否覆盖?",model.record];
-        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"提示" message:mes preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self recordCover:YES];
-        }];
-        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            
-        }];
-        [actionSheet addAction:action1];
-        [actionSheet addAction:action2];
-        [self presentViewController:actionSheet animated:YES completion:nil];
-    }
-
+    [SBAddTagManager addTag];
 }
 
 -(void)recordCover:(BOOL)cover{
