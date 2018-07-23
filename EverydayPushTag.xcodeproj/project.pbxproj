@@ -41,7 +41,6 @@
 		A4BB888920F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4BB888420F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist */; };
 		A4BB888A20F77E3F005B70B0 /* STLVideoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888620F77E3F005B70B0 /* STLVideoFunctions.m */; };
 		A4BB888B20F77E3F005B70B0 /* STLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BB888720F77E3F005B70B0 /* STLVideoViewController.m */; };
-		A4BB889420F7987A005B70B0 /* BridgeLoop-640p.MOV in Resources */ = {isa = PBXBuildFile; fileRef = A4BB889320F7987A005B70B0 /* BridgeLoop-640p.MOV */; };
 		A4D2E47B20F4EC1A001F5ADE /* SBRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E47A20F4EC1A001F5ADE /* SBRecordController.m */; };
 		A4D2E47E20F4EC6E001F5ADE /* SBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E47D20F4EC6E001F5ADE /* SBFileManager.m */; };
 		A4D2E48E20F4FCC0001F5ADE /* SBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E48D20F4FCC0001F5ADE /* SBDataManager.m */; };
@@ -137,7 +136,6 @@
 		A4BB888620F77E3F005B70B0 /* STLVideoFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLVideoFunctions.m; sourceTree = "<group>"; };
 		A4BB888720F77E3F005B70B0 /* STLVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLVideoViewController.m; sourceTree = "<group>"; };
 		A4BB888820F77E3F005B70B0 /* STLVideoFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLVideoFunctions.h; sourceTree = "<group>"; };
-		A4BB889320F7987A005B70B0 /* BridgeLoop-640p.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "BridgeLoop-640p.MOV"; sourceTree = "<group>"; };
 		A4D2E47920F4EC1A001F5ADE /* SBRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBRecordController.h; sourceTree = "<group>"; };
 		A4D2E47A20F4EC1A001F5ADE /* SBRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBRecordController.m; sourceTree = "<group>"; };
 		A4D2E47C20F4EC6E001F5ADE /* SBFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBFileManager.h; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 				A46671182101CF9900DE5832 /* IMB_sxPtFi.MOV */,
 				A466711A2101CF9900DE5832 /* IMB_WlriTR.MOV */,
 				A46671162101923000DE5832 /* Marvel.MOV */,
-				A4BB889320F7987A005B70B0 /* BridgeLoop-640p.MOV */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -466,7 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4EDF57D21056D300019D41C /* SBSettingView.xib in Resources */,
-				A4BB889420F7987A005B70B0 /* BridgeLoop-640p.MOV in Resources */,
 				A466711E2101CF9A00DE5832 /* IMB_WlriTR.MOV in Resources */,
 				A437F51920F38DAB002975B6 /* LaunchScreen.storyboard in Resources */,
 				A4BB888920F77E3F005B70B0 /* C415F3F13BBD50B1-info.plist in Resources */,

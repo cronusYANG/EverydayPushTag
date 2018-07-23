@@ -42,7 +42,7 @@
 
 - (void)preparePlayback {
     if (self.player == nil) {
-        NSArray *arr = @[@"IMB_WlriTR",@"IMB_sxPtFi",@"Marvel",@"BridgeLoop-640p"];
+        NSArray *arr = @[@"IMB_WlriTR",@"IMB_sxPtFi",@"Marvel"];
         int value = (arc4random() % (arr.count-1));
         NSString *resource = arr[value];
         NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:resource ofType:[STLVideoFunctions getVideoType]]];
