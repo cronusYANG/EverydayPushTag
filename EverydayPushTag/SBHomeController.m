@@ -100,6 +100,7 @@
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
     effectView.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    effectView.alpha = 0.9;
     [self.view addSubview:effectView];
     
     _timeView = [[SBTimeView alloc] init];

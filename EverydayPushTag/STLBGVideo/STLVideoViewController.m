@@ -42,9 +42,9 @@
 
 - (void)preparePlayback {
     if (self.player == nil) {
-        NSArray *arr = @[@"IMB_WlriTR",@"IMB_sxPtFi",@"Marvel"];
-        int value = (arc4random() % (arr.count-1));
-        NSString *resource = arr[value];
+//        NSArray *arr = @[@"IMB_WlriTR",@"IMB_sxPtFi",@"Marvel"];
+//        int value = (arc4random() % (arr.count-1));
+        NSString *resource = @"IMB_WlriTR";
         NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:resource ofType:[STLVideoFunctions getVideoType]]];
         self.player = [[MPMoviePlayerController alloc] initWithContentURL:url];
         [self.player setControlStyle:MPMovieControlStyleNone];
