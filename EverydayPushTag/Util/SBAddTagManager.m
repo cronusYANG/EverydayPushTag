@@ -82,11 +82,25 @@
     AudioServicesPlaySystemSound(soundIDTest);
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSTimeInterval countdown = 3600 * 9;
+        if ([self timeInterval]>3600) {
+            countdown = [self timeInterval];
+        }
         NSString *body = [NSString stringWithFormat:@"今天%@打的卡,现在可以走了",time];
         [SBNotificationManager getOffWorkToNotificationWithTitle:@"下班了时间到" subtitle:@"" body:body timeInterval:countdown];
     }];
     [actionSheet addAction:action1];
     [[self getCurrentViewController] presentViewController:actionSheet animated:YES completion:nil];
+}
+
++ (void)saveIntervalTime:(NSString *)timeInterval{
+    [SBDataManager saveData:timeInterval withFileName:TIMEINTERVAL];
+}
+
++ (NSTimeInterval)timeInterval{
+   id data = [SBDataManager loadDataWithPath:TIMEINTERVAL];
+    NSString *str = data;
+    NSTimeInterval timeInterval = [str integerValue] * 3600;
+    return timeInterval;
 }
 
 + (UIViewController *) getCurrentViewController {

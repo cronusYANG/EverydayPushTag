@@ -47,6 +47,8 @@
 		A4D2E48E20F4FCC0001F5ADE /* SBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D2E48D20F4FCC0001F5ADE /* SBDataManager.m */; };
 		A4E9EA0820F4B0AD00C27FE5 /* SBTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9EA0720F4B0AD00C27FE5 /* SBTimeView.m */; };
 		A4E9EA0C20F4B14A00C27FE5 /* SBTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9EA0B20F4B14A00C27FE5 /* SBTimeManager.m */; };
+		A4EDF57B21056CF20019D41C /* SBSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EDF57A21056CF20019D41C /* SBSettingView.m */; };
+		A4EDF57D21056D300019D41C /* SBSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4EDF57C21056D300019D41C /* SBSettingView.xib */; };
 		BFAD25C43755AA5AEC501A56 /* libPods-EverydayPushTag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC07B4D9B1BF7BC39BFE652 /* libPods-EverydayPushTag.a */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,9 @@
 		A4E9EA0720F4B0AD00C27FE5 /* SBTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTimeView.m; sourceTree = "<group>"; };
 		A4E9EA0A20F4B14A00C27FE5 /* SBTimeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTimeManager.h; sourceTree = "<group>"; };
 		A4E9EA0B20F4B14A00C27FE5 /* SBTimeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTimeManager.m; sourceTree = "<group>"; };
+		A4EDF57921056CF20019D41C /* SBSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBSettingView.h; sourceTree = "<group>"; };
+		A4EDF57A21056CF20019D41C /* SBSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBSettingView.m; sourceTree = "<group>"; };
+		A4EDF57C21056D300019D41C /* SBSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSettingView.xib; sourceTree = "<group>"; };
 		A637411ECAE0AB28FE50B6F4 /* Pods-EverydayPushTag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayPushTag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EverydayPushTag/Pods-EverydayPushTag.debug.xcconfig"; sourceTree = "<group>"; };
 		CDC07B4D9B1BF7BC39BFE652 /* libPods-EverydayPushTag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EverydayPushTag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -266,6 +271,9 @@
 				A437F54320F391D5002975B6 /* SBTagView.m */,
 				A4E9EA0620F4B0AD00C27FE5 /* SBTimeView.h */,
 				A4E9EA0720F4B0AD00C27FE5 /* SBTimeView.m */,
+				A4EDF57921056CF20019D41C /* SBSettingView.h */,
+				A4EDF57A21056CF20019D41C /* SBSettingView.m */,
+				A4EDF57C21056D300019D41C /* SBSettingView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,6 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4EDF57D21056D300019D41C /* SBSettingView.xib in Resources */,
 				A4BB889420F7987A005B70B0 /* BridgeLoop-640p.MOV in Resources */,
 				A466711E2101CF9A00DE5832 /* IMB_WlriTR.MOV in Resources */,
 				A437F51920F38DAB002975B6 /* LaunchScreen.storyboard in Resources */,
@@ -533,6 +542,7 @@
 				A46671102100423500DE5832 /* LYSDatePickerTypeDayDelegate.m in Sources */,
 				A4BB888B20F77E3F005B70B0 /* STLVideoViewController.m in Sources */,
 				A46671142100423500DE5832 /* LYSDatePickerController.m in Sources */,
+				A4EDF57B21056CF20019D41C /* SBSettingView.m in Sources */,
 				A4E9EA0C20F4B14A00C27FE5 /* SBTimeManager.m in Sources */,
 				A46671052100423500DE5832 /* LYSDateContentView.m in Sources */,
 				A4D2E47B20F4EC1A001F5ADE /* SBRecordController.m in Sources */,

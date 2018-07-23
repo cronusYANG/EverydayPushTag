@@ -12,6 +12,7 @@
 #import "LYSDatePickerController.h"
 #import "SBTimeManager.h"
 #import "SBNotificationManager.h"
+#import "SBAddTagManager.h"
 #import <UserNotifications/UserNotifications.h>
 
 static NSString *cellID = @"cell";
@@ -149,6 +150,9 @@ static NSString *cellID = @"cell";
             [weakSelf loadData];
             NSTimeInterval secondsInterval= [[SBTimeManager nowTime] timeIntervalSinceDate:date];
             NSTimeInterval countdown = (3600*9)-secondsInterval;
+            if ([SBAddTagManager timeInterval]>3600) {
+                countdown = [SBAddTagManager timeInterval]-secondsInterval;
+            }
             NSString *body = [NSString stringWithFormat:@"今天%@打的卡,现在可以走了",newTime];
             [SBNotificationManager getOffWorkToNotificationWithTitle:@"下班了时间到" subtitle:@"" body:body timeInterval:countdown];
             

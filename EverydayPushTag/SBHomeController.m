@@ -18,6 +18,7 @@
 #import "SBNotificationManager.h"
 #import "STLVideoFunctions.h"
 #import "SBAddTagManager.h"
+#import "SBSettingView.h"
 
 @interface SBHomeController ()
 @property(strong,nonatomic) SBTimeView *timeView;
@@ -25,6 +26,7 @@
 @property (strong,nonatomic) NSTimer *timer;
 @property(assign,nonatomic) BOOL ispush;
 @property(strong,nonatomic) NSMutableArray *mArray;
+@property(strong,nonatomic) SBSettingView *settingView;
 @end
 
 @implementation SBHomeController
@@ -141,53 +143,20 @@
 }
 
 -(void)clickSetting{
-    
+    if (![self.settingView superview]) {
+        self.settingView = [SBSettingView settingView];
+        [self.view addSubview:self.settingView];
+        
+        [self.settingView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.offset(0);
+            make.width.offset(WIDTH/1.5);
+            make.height.offset(HEIGHT/4);
+        }];
+    }
 }
 
 -(void)clickTag{
     [SBAddTagManager addTag];
-}
-
--(void)recordCover:(BOOL)cover{
-    
-    id data = [SBDataManager loadDataWithPath:TIMEDATA];
-    if (data) {
-        _mArray = data;
-        if(cover){
-            SBModel *model = [[SBModel alloc] init];
-            for (int i = 0; i < _mArray.count; i++) {
-                model = _mArray[i];
-                if ([SBTimeManager isSameDay:model.date]) {
-                    [_mArray removeObjectAtIndex:i];
-                }
-            }
-        }
-}
-    
-    NSString *time = [SBTimeManager dateToStringWithDateFormat:@"HH:mm:ss"];
-    NSString *date = [SBTimeManager dateToStringWithDateFormat:@"yyyy年MM月dd日"];
-    NSString *record = [NSString stringWithFormat:@"%@-%@-%@",date,[SBTimeManager weekdayStringFromDate],time];
-    SBModel *model = [[SBModel alloc] init];
-    model.record = record;
-    model.date = [SBTimeManager nowTime];
-    model.strDate = date;
-    model.time = time;
-    model.week = [SBTimeManager weekdayStringFromDate];
-    [_mArray addObject:model];
-    [SBDataManager saveData:_mArray withFileName:TIMEDATA];
-
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"记录成功" message:time preferredStyle:UIAlertControllerStyleAlert];
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);//震动提示
-    //提示音
-    SystemSoundID soundIDTest = 1013;
-    AudioServicesPlaySystemSound(soundIDTest);
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSTimeInterval countdown = 3600 * 9;
-        NSString *body = [NSString stringWithFormat:@"今天%@打的卡,现在可以走了",time];
-        [SBNotificationManager getOffWorkToNotificationWithTitle:@"下班了时间到" subtitle:@"" body:body timeInterval:countdown];
-    }];
-    [actionSheet addAction:action1];
-    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

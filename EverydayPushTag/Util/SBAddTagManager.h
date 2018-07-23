@@ -10,5 +10,7 @@
 
 @interface SBAddTagManager : NSObject
 + (void)addTag;
++ (void)saveIntervalTime:(NSString *)timeInterval;
++ (NSTimeInterval)timeInterval;
 + (UIViewController *) getCurrentViewController;
 @end

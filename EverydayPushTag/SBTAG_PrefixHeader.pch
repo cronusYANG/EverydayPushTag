@@ -22,5 +22,6 @@
 #define VERSION [UIDevice currentDevice].systemVersion
 
 #define TIMEDATA @"TIMEDATA"
+#define TIMEINTERVAL @"TIMEINTERVAL"
 
 #endif /* SBTAG_PrefixHeader_pch */
