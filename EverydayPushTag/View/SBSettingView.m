@@ -27,7 +27,7 @@
 
 -(void)clickAffirm{
     NSInteger inter = [_timeTF.text integerValue];
-    if (_timeTF.text.length && inter<= 24) {
+    if (_timeTF.text.length && inter<=24 && inter>0) {
         [SBAddTagManager saveIntervalTime:_timeTF.text];
         [self removeFromSuperview];
     }
@@ -44,9 +44,28 @@
         return NO;
     }
     
-    NSUInteger newLength = [textField.text length] + [string length] - range.length;
-    return newLength <= 2;
-    
+    return [self validateTextField:textField InRange:range ReplacementString:string];
+}
+
+- (BOOL)validateTextField:(UITextField *)textField InRange:(NSRange)range ReplacementString:(NSString*)string {
+    BOOL res = YES;
+    NSCharacterSet* tmpSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    int i = 0;
+    while (i < string.length) {
+        NSString * str = [string substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [str rangeOfCharacterFromSet:tmpSet];
+        if (range.length == 0) {
+            res = NO;
+            break;
+        }
+        i++;
+    }
+    if (res) {
+        NSUInteger newLength = [textField.text length] + [string length] - range.length;
+        res = newLength <= 2;
+    }
+
+    return res;
 }
 
 + (instancetype)settingView {
