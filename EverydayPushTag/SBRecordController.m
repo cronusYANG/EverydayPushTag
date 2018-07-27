@@ -134,7 +134,9 @@ static NSString *cellID = @"cell";
 {
     WeekSelf;
     SBModel *model = [[SBModel alloc] init];
-    model = weakSelf.dataArray[indexPath.row];
+    NSMutableArray *arr = [NSMutableArray array];
+    arr = (NSMutableArray *)[[_dataArray reverseObjectEnumerator] allObjects];
+    model = arr[indexPath.row];
     UITableViewRowAction *action0 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"修改" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         
         [weakSelf alterDate:^(NSDate *date) {

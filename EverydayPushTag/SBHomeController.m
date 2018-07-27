@@ -144,6 +144,7 @@
 }
 
 -(void)clickSetting{
+    
     if (![self.settingView superview]) {
         self.settingView = [SBSettingView settingView];
         [self.view addSubview:self.settingView];
